@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Renlio · Terms of Service" />
+  <meta name="theme-color" content="#E85D2A" />
+  <title>Renlio · Terms of Service</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💳%3C/text%3E%3C/svg%3E" />
+  <style>
+:root {
+  --brand: #E85D2A;
+  --brand-soft: #E9D4CC;
+  --brand-dark: #A8431E;
+  --bg: #F2EEEC;
+  --surface: #FDFCFC;
+  --text: #341B11;
+  --text-secondary: #674E45;
+  --text-tertiary: #93776C;
+  --divider: #DCD3CF;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px #E85D2A14;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1D1816;
+    --surface: #272220;
+    --text: #F3F2F2;
+    --text-secondary: #BAAFAB;
+    --text-tertiary: #87756E;
+    --divider: #3B2F2B;
+    --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--brand-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+header { text-align: center; padding: 24px 0 28px; }
+.logo {
+  width: 72px; height: 72px; margin: 0 auto 16px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  border-radius: 22px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 8px 24px #E85D2A4D;
+}
+h1 { font-size: 30px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.4px; }
+.tagline { color: var(--text-secondary); font-size: 16px; margin: 0; }
+.breadcrumb { font-size: 13px; color: var(--text-tertiary); margin-bottom: 8px; }
+.breadcrumb a { color: var(--text-secondary); }
+.last-updated { color: var(--text-tertiary); font-size: 13px; margin: 0 0 24px; }
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+}
+.card h2 { font-size: 19px; font-weight: 600; margin: 0 0 14px; letter-spacing: -0.2px; }
+.card p { color: var(--text-secondary); font-size: 15px; margin: 0 0 12px; }
+.card p:last-child { margin-bottom: 0; }
+.contact-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--brand); color: white;
+  padding: 12px 20px; border-radius: 999px;
+  font-weight: 600; font-size: 15px;
+  transition: background 0.2s;
+}
+.contact-cta:hover { background: var(--brand-dark); text-decoration: none; color: white; }
+.response-time { display: block; color: var(--text-tertiary); font-size: 13px; margin-top: 12px; }
+.faq-item { padding: 14px 0; border-top: 1px solid var(--divider); }
+.faq-item:first-of-type { border-top: none; padding-top: 0; }
+.faq-item:last-of-type { padding-bottom: 0; }
+.faq-item h3 { font-size: 15px; font-weight: 600; margin: 0 0 6px; color: var(--text); }
+.faq-item p { font-size: 14.5px; color: var(--text-secondary); margin: 0; }
+.legal-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.legal-links a {
+  flex: 1; min-width: 200px;
+  background: var(--bg);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  color: var(--text); font-weight: 500; font-size: 15px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: border-color 0.2s, background 0.2s;
+}
+.legal-links a:hover { border-color: var(--brand); background: var(--surface); text-decoration: none; }
+.legal-links a::after { content: "→"; color: var(--text-tertiary); font-size: 18px; }
+
+/* Legal doc content styles */
+.legal-content h1 { font-size: 30px; margin: 0 0 6px; letter-spacing: -0.4px; }
+.legal-content h2 { font-size: 20px; margin: 28px 0 10px; font-weight: 600; letter-spacing: -0.2px; }
+.legal-content h3 { font-size: 16px; margin: 18px 0 8px; font-weight: 600; }
+.legal-content p, .legal-content ul { color: var(--text-secondary); font-size: 15px; margin: 0 0 10px; }
+.legal-content ul { padding-left: 22px; }
+.legal-content ul li { margin-bottom: 4px; }
+.legal-content strong { color: var(--text); font-weight: 600; }
+.legal-content code {
+  background: var(--surface); padding: 1px 6px; border-radius: 4px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13.5px;
+}
+.legal-content hr { border: none; border-top: 1px solid var(--divider); margin: 32px 0; }
+.legal-content blockquote {
+  border-left: 3px solid var(--brand);
+  background: #E9D4CC33;
+  padding: 12px 16px; margin: 16px 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.legal-content blockquote p { margin: 0; color: var(--text); }
+.table-wrap { overflow-x: auto; margin: 14px 0; border-radius: var(--radius-sm); }
+.legal-content table {
+  width: 100%; border-collapse: collapse;
+  background: var(--surface);
+  font-size: 14px;
+}
+.legal-content th, .legal-content td {
+  padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--divider);
+}
+.legal-content th {
+  background: var(--bg); color: var(--text);
+  font-weight: 600; font-size: 13px;
+  letter-spacing: 0.2px; text-transform: uppercase;
+}
+.legal-content td { color: var(--text-secondary); }
+footer {
+  margin-top: 56px; padding-top: 24px;
+  border-top: 1px solid var(--divider);
+  text-align: center; color: var(--text-tertiary); font-size: 13px;
+}
+footer .links { margin-bottom: 12px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+footer .links a { color: var(--text-secondary); }
+@media (max-width: 480px) {
+  .container { padding: 20px 16px 60px; }
+  h1, .legal-content h1 { font-size: 24px; }
+  .card { padding: 22px; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">← Support</a></div>
+    
+    <div class="card" style="background: #E9D4CC33; border: 1px solid #E85D2A40;">
+      <h2 style="font-size: 15px;">📜 Quick Summary</h2>
+      <p style="font-size: 14px; margin: 0;">To use Renlio, you must be of age and follow Apple App Store rules + Apple EULA. Subscriptions are managed via your Apple ID.</p>
+    </div>
+    <article class="legal-content">
+      <h1>Renlio Terms of Service</h1>
+<p><strong>Effective date:</strong> 2026-05-16</p>
+<p><strong>Last updated:</strong> 2026-05-16</p>
+<p><strong>Version:</strong> 1.0</p>
+<p>These Terms of Service (&quot;<strong>Terms</strong>&quot; or &quot;<strong>Agreement</strong>&quot;) form a legally binding contract between Bayram Baş (&quot;<strong>we</strong>&quot;, &quot;<strong>Provider</strong>&quot;) and you (&quot;<strong>User</strong>&quot;, &quot;<strong>you</strong>&quot;) who use the Renlio mobile application (the &quot;<strong>App</strong>&quot; or &quot;<strong>Service</strong>&quot;). By downloading, installing, registering, or using the App in any way, you accept these Terms. If you do not accept them, do not use the App and delete your account if you have one.</p>
+<blockquote>
+<p>⚖️ <strong>Legal notice.</strong> These Terms were drafted with reference to the <strong>Apple App Store distribution rules</strong>, the <strong>EU Consumer Rights Directive (2011/83/EU)</strong>, the <strong>EU Digital Services Act (DSA)</strong>, and the <strong>Apple Licensed Application End User License Agreement (App Store Schedule 1 EULA)</strong>. We recommend a qualified attorney review this document before publishing it.</p>
+</blockquote>
+<hr />
+<h2>1. Definitions</h2>
+<p>In these Terms, the following terms have these meanings:</p>
+<ul>
+<li><strong>Account:</strong> A user record you create in the App</li>
+<li><strong>Content:</strong> All text, images, audio, data, and other materials shown, downloaded, or created in the App</li>
+<li><strong>User Content:</strong> Content created/uploaded by the User</li>
+<li><strong>Service:</strong> The App and all related features, the website, and the APIs</li>
+<li><strong>Subscription:</strong> A periodic paid plan inside the App</li>
+<li><strong>Premium Features:</strong> Features accessible only via a Subscription or purchase</li>
+</ul>
+<hr />
+<h2>2. Acceptance and Age Requirement</h2>
+<ul>
+<li>You must be <strong>13 years of age or older</strong> to use the App</li>
+<li>If you are not of age, you represent that your legal guardian has accepted these Terms and consents to your use</li>
+</ul>
+<ul>
+<li>The App is <strong>not directed to children under 13</strong>; we do not knowingly register users under 13</li>
+</ul>
+<ul>
+<li>If you use the Service from a country where it is restricted, you are solely responsible for ensuring your use is lawful</li>
+</ul>
+<hr />
+<h2>3. Account</h2>
+<h3>3.1 Account creation</h3>
+<p>You must provide accurate, current, and complete information when creating your Account. You may create your Account through:</p>
+<ul>
+<li><strong>Apple ile Giriş</strong> (önerilen — Apple App Store Review Guideline 4.8 gereği zorunlu)</li>
+</ul>
+<h3>3.2 Account security</h3>
+<ul>
+<li>You are responsible for keeping your password confidential and your Account secure</li>
+<li>You are responsible for all activity originating from your Account</li>
+<li>Notify us <strong>immediately</strong> at <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a> if you detect unauthorized access</li>
+</ul>
+<h3>3.3 One person — one account</h3>
+<p>Creating more than one Account per person is prohibited. Fake/misleading Accounts may be suspended or deleted.</p>
+<h3>3.4 Account deletion</h3>
+<ul>
+<li>You can delete your Account in-app via <strong>Settings → Account → Delete Account</strong> (one-tap removal required by Apple App Store Review Guideline 5.1.1(v))</li>
+<li>Deletion is processed within 30 days (see Privacy Policy for details)</li>
+<li>Legally required records (Apple payment, tax) are anonymized</li>
+</ul>
+<hr />
+<h2>4. Scope of the Service and License</h2>
+<h3>4.1 Right of use (license)</h3>
+<p>Subject to your acceptance of these Terms, we grant you a <strong>personal, non-commercial, non-transferable, non-exclusive, revocable</strong> license to use the App. This license terminates automatically when:</p>
+<ul>
+<li>You violate these Terms</li>
+<li>You delete your Account</li>
+<li>Your Apple App Store license ends (App Store Schedule 1 EULA)</li>
+</ul>
+<h3>4.2 Apple-Provided License Terms (App Store EULA)</h3>
+<p>Apple&#x27;s &quot;<strong>Licensed Application End User License Agreement</strong>&quot; is incorporated into this Agreement and applies <strong>between you and Provider</strong>; Apple is <strong>not a party to this Agreement</strong> but retains certain rights under <a href="https://www.apple.com/legal/internet-services/itunes/">Apple Media Services Terms</a>:</p>
+<ul>
+<li>Use only on Apple-branded devices (App Store Schedule 1 §2)</li>
+<li>One user / Apple ID per device</li>
+<li>No reverse engineering</li>
+<li>Apple is a <strong>third-party beneficiary</strong> of this Agreement</li>
+<li>Apple disclaims <strong>all warranties and liability</strong> for the App and Content</li>
+<li>All claims arising from the App must be directed to the <strong>Provider</strong>, not Apple</li>
+</ul>
+<h3>4.3 Open source components</h3>
+<p>The App may include open source components subject to their own license terms. The list of open source libraries and their licenses is in-app under <strong>Settings → About → Open Source Licenses</strong>.</p>
+<hr />
+<h2>5. User Obligations</h2>
+<p>When using the App, you must follow these rules.</p>
+<h3>5.1 Prohibited actions</h3>
+<p>You <strong>must not</strong>:</p>
+<ul>
+<li>Create/share content that violates law, public order, or morality</li>
+<li>Harass, threaten, or discriminate against another user</li>
+<li>Infringe intellectual property rights (copyright, trademark, trade secrets)</li>
+<li>Distribute spam, phishing, or malicious software</li>
+<li>Try to bypass security mechanisms (jailbreak, certificate removal, in-app purchase manipulation)</li>
+<li>Reverse engineer or decompile the App (beyond what law expressly permits)</li>
+<li>Scrape content via automated means (bots, scrapers)</li>
+<li>Place disproportionate load on the infrastructure (DoS, brute force)</li>
+<li>Use the App in a way that violates Apple App Store rules</li>
+<li>Send bulk promotional messages without Provider permission</li>
+</ul>
+<h3>5.2 Legal responsibility</h3>
+<p>All legal liability for violating these rules is <strong>yours</strong>. The Provider reserves the right to defend itself against third-party claims; you agree to indemnify the Provider for any damages and legal/criminal consequences that may result.</p>
+<hr />
+<h2>6. User Content</h2>
+<h3>6.1 Ownership</h3>
+<p>All Content you create in the App (e.g., kayıtlarınız, listeleriniz, notlarınız, oluşturduğunuz içerikler) <strong>belongs to you</strong>.</p>
+<h3>6.2 License granted to Provider</h3>
+<p>You grant us a <strong>worldwide, royalty-free, sublicensable</strong> license to use, store, reproduce, display, distribute, and adapt your User Content, solely for the purpose of providing the Service. This license:</p>
+<ul>
+<li>Is used only to provide the Service to you</li>
+<li><strong>Terminates</strong> when you delete your Account (except for backup snapshots, up to 90 days)</li>
+<li>Does <strong>not</strong> allow us to <strong>commercially sell</strong> your Content</li>
+<li>For any marketing materials displayed on the App Store, we use your User Content only with your <strong>explicit prior consent</strong></li>
+</ul>
+<h3>6.3 Content moderation</h3>
+<ul>
+<li>We may <strong>remove</strong> content that violates law, others&#x27; rights, or these Terms <strong>without prior notice</strong></li>
+<li>We comply with notices received under DSA / national notice-and-takedown rules</li>
+<li>Repeat offenders may have their Account suspended</li>
+</ul>
+<hr />
+<h2>7. Intellectual Property</h2>
+<ul>
+<li>The App, its logo, brand names, UI design, code, content, visuals, and all components are owned by Bayram Baş and protected by copyright, trademark, and design law</li>
+<li>Using the App does not grant you <strong>intellectual property rights</strong></li>
+<li>The name, logos, and trade dress of Bayram Baş cannot be used without our written permission</li>
+<li>For copyright infringement notices: <strong><a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a></strong> — we follow DMCA / equivalent local procedures</li>
+</ul>
+<hr />
+<h2>8. Third-Party Services</h2>
+<p>The App integrates with the following third-party services; their <strong>own Terms of Service and Privacy Policies</strong> apply to you directly:</p>
+<ul>
+<li><strong>FirebaseFirestore</strong> — Sunucu tarafı veri saklama / Cloud database</li>
+<li><strong>FirebaseAuth</strong> — Kullanıcı kimlik doğrulama / Authentication</li>
+<li><strong>FirebaseRemoteConfig</strong> — Uzaktan yapılandırma / Remote configuration</li>
+</ul>
+<p>The Provider is <strong>not responsible</strong> for the availability, functionality, or security of third-party services.</p>
+<hr />
+<h2>9. Fees, Subscriptions, and Purchases</h2>
+<h3>9.1 Free and premium tier</h3>
+<p>The core features of the App are <strong>free</strong>. Premium Features may be purchased via in-app purchases:</p>
+<h3>9.2 Payment via Apple App Store</h3>
+<ul>
+<li>All payments are processed via <strong>Apple App Store / StoreKit</strong></li>
+<li>Fees are governed by <strong>Apple Media Services Terms</strong> and the <strong>App Store EULA</strong></li>
+<li>Your card details are processed by Apple and not passed to us</li>
+<li>Billing occurs in the currency and price tier registered to your Apple ID</li>
+</ul>
+<h3>9.3 Subscriptions</h3>
+<p>For subscriptions, the following Apple-required disclosures apply:</p>
+<ul>
+<li><strong>Price:</strong> Uygulama içinden açıkça gösterilen güncel App Store fiyatı (yerel para biriminizde).</li>
+<li><strong>Duration:</strong> Aylık / yıllık seçenekleri Uygulama içinde sunulur; satın alma öncesi süre açıkça gösterilir.</li>
+<li><strong>Auto-renewal:</strong> Subscriptions <strong>automatically renew</strong> unless canceled at least 24 hours before the end of the current period</li>
+<li><strong>Renewal charge:</strong> Your Apple ID is charged 24 hours before the end of the current period</li>
+<li><strong>Cancellation:</strong> You can cancel via iOS Settings → Apple ID → Subscriptions → Renlio. In-app link: Settings → Manage Subscription</li>
+<li><strong>Current period:</strong> Access continues through the end of the paid period after cancellation; <strong>no partial refunds</strong></li>
+<li><strong>Free trial:</strong> Yeni kullanıcılara opsiyonel ücretsiz deneme sunulabilir; deneme bitiminden 24 saat önce iptal etmezseniz abonelik otomatik başlar.</li>
+</ul>
+<h3>9.4 Price changes</h3>
+<p>For price changes:</p>
+<ul>
+<li>You will be <strong>notified</strong> via Apple</li>
+<li>You must <strong>explicitly confirm</strong> the new price (Apple StoreKit requirement)</li>
+<li>Unless confirmed, the new price does not apply; the subscription ends at the end of the current period</li>
+</ul>
+<h3>9.5 Refund policy</h3>
+<ul>
+<li>Apple App Store refunds are governed by <strong>Apple Media Services Terms</strong></li>
+<li>Submit refund requests directly to Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></li>
+<li>The Provider has no authority to issue refunds — that is at Apple&#x27;s sole discretion</li>
+<li>If Apple issues a refund:</li>
+<li>Premium features are revoked</li>
+<li>A chargeback obligation may arise for the Provider</li>
+<li>Account remains in good standing</li>
+</ul>
+<h3>9.6 EU consumer rights (withdrawal)</h3>
+<p>Per EU Consumer Rights Directive 2011/83/EU Article 16(m), you <strong>expressly waive</strong> your 14-day right of withdrawal for digital content, as the Service becomes immediately accessible.</p>
+<hr />
+<h2>10. Disclaimer of Warranties</h2>
+<p><strong>THE APP IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE.&quot;</strong> To the maximum extent permitted by law:</p>
+<ul>
+<li>We give <strong>no express or implied warranties</strong> as to fitness for a particular purpose, merchantability, uninterrupted operation, or error-free function</li>
+<li>We do not warrant that the App will operate <strong>uninterrupted, secure, or error-free</strong></li>
+<li>We do not warrant the <strong>accuracy, completeness, or currency</strong> of information in the App</li>
+<li>We do not warrant that any Content is <strong>appropriate, accurate, or useful</strong> for you</li>
+</ul>
+<hr />
+<h2>11. Limitation of Liability</h2>
+<p>To the maximum extent permitted by law:</p>
+<ul>
+<li>The Provider is not liable for <strong>indirect, incidental, special, consequential, or punitive damages</strong></li>
+<li>Our liability, where it can be capped by law, will not exceed the <strong>total amount you paid for the App in the past 12 months</strong> (USD 100 equivalent for a free user)</li>
+<li>The Provider is not liable for damages caused by third-party services, hardware/software failures, internet outages, or force majeure</li>
+<li>These limitations do not apply where excluded by law (e.g., <strong>intentional misconduct, gross negligence</strong>)</li>
+<li>Your <strong>statutory consumer rights</strong> are not affected by this section (e.g., EU Consumer Rights Directive)</li>
+</ul>
+<hr />
+<h2>12. Indemnification</h2>
+<p>You agree to <strong>indemnify</strong> the Provider, its employees, officers, and partners against damages arising from:</p>
+<ul>
+<li>Your use of the App in violation of these Terms</li>
+<li>Unlawful conduct</li>
+<li>Infringement of others&#x27; rights</li>
+<li>False or misleading information you provided</li>
+</ul>
+<hr />
+<h2>13. Suspension and Termination</h2>
+<h3>13.1 Termination by Provider</h3>
+<p>We may suspend or terminate your Service (with or without notice) if:</p>
+<ul>
+<li>You violate the Terms</li>
+<li>You use the App unlawfully</li>
+<li>Your behavior endangers other users&#x27; safety</li>
+<li>Apple App Store rules appear to have been violated</li>
+<li>The Service can no longer be lawfully provided in your country</li>
+</ul>
+<h3>13.2 Termination of the Service by Provider</h3>
+<p>We may terminate the Service in whole or in part. In that case:</p>
+<ul>
+<li>We give you <strong>at least 30 days&#x27; notice</strong></li>
+<li>We provide a way to download your data</li>
+<li>The <strong>unused portion</strong> of active subscriptions may be refunded by Apple</li>
+</ul>
+<h3>13.3 Termination by User</h3>
+<p>You can delete your Account at any time (Section 3.4). You must separately cancel any active subscription via Apple.</p>
+<hr />
+<h2>14. Service Modifications</h2>
+<p>We may improve, modify, add, or remove features in the App <strong>without prior notice</strong>. For material changes, we give reasonable notice.</p>
+<hr />
+<h2>15. Changes to These Terms</h2>
+<p>We may update these Terms from time to time. For material changes:</p>
+<ul>
+<li>We show an <strong>in-app notification</strong> on next launch</li>
+<li>We email registered users (if applicable)</li>
+<li>We give <strong>at least 30 days&#x27;</strong> advance notice</li>
+<li>If you do not accept the new Terms, you must stop using the App</li>
+</ul>
+<hr />
+<h2>16. Governing Law and Venue</h2>
+<ul>
+<li>These Terms are governed by the law of <strong>Türkiye Cumhuriyeti</strong></li>
+<li>Disputes arising from these Terms shall be brought in the courts of <strong>İstanbul</strong></li>
+<li>Nevertheless, your right to invoke consumer protection law of your country of residence is preserved</li>
+<li>EU-resident consumers may use the EU <strong>Online Dispute Resolution Platform</strong> (ec.europa.eu/consumers/odr)</li>
+</ul>
+<hr />
+<h2>17. Miscellaneous</h2>
+<h3>17.1 Severability</h3>
+<p>If any provision is held invalid, the remaining provisions remain in effect; the invalid provision will be replaced by the legally compliant one closest in meaning.</p>
+<h3>17.2 No waiver</h3>
+<p>Failure to enforce a right is not a waiver of that right.</p>
+<h3>17.3 Assignment</h3>
+<p>The Provider may assign the Terms to another entity (e.g., merger/acquisition). You may not assign your rights without our written consent.</p>
+<h3>17.4 Force majeure</h3>
+<p>The Provider is not liable for delays or failures caused by floods, earthquakes, war, pandemic, government actions, internet infrastructure outages, or other force majeure.</p>
+<h3>17.5 Entire agreement</h3>
+<p>These Terms together with the Privacy Policy represent the <strong>entire agreement</strong> between the Provider and the User, superseding any prior oral or written agreements.</p>
+<h3>17.6 Apple as third-party beneficiary</h3>
+<p>As stated in Section 4.2, Apple is a <strong>third-party beneficiary</strong> of these Terms and may enforce them against you.</p>
+<hr />
+<h2>18. Contact</h2>
+<p>For any question about these Terms:</p>
+<ul>
+<li><strong>Email (general):</strong> <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a></li>
+<li><strong>Email (legal):</strong> <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a></li>
+<li><strong>Postal:</strong> Bayram Baş, İstanbul, Türkiye (kayıtlı iletişim adresi için <a href="mailto:support@renlio.com">support@renlio.com</a>)</li>
+<li><strong>Web:</strong> https://renlio.com/terms</li>
+</ul>
+<hr />
+<p><strong>Version history:</strong></p>
+<ul>
+<li>v1.0 (2026-05-16): İlk yayın</li>
+</ul>
+    </article>
+    <footer>
+      <div class="links">
+        <a href="index.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      © <span id="year">2026</span> Renlio · <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a>
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

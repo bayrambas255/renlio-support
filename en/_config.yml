@@ -1,0 +1,6 @@
+# GitHub Pages — Jekyll config
+title: "Renlio Support"
+description: "Manage subscriptions, take control"
+theme: null
+plugins: []
+include: ["*.html", "*.md"]

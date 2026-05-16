@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Renlio — Aboneliklerini yönet, kontrolünü ele al. Destek ve iletişim." />
+  <meta name="theme-color" content="#E85D2A" />
+  <title>Renlio · İletişim</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💳%3C/text%3E%3C/svg%3E" />
+  <style>
+:root {
+  --brand: #E85D2A;
+  --brand-soft: #E9D4CC;
+  --brand-dark: #A8431E;
+  --bg: #F2EEEC;
+  --surface: #FDFCFC;
+  --text: #341B11;
+  --text-secondary: #674E45;
+  --text-tertiary: #93776C;
+  --divider: #DCD3CF;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px #E85D2A14;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1D1816;
+    --surface: #272220;
+    --text: #F3F2F2;
+    --text-secondary: #BAAFAB;
+    --text-tertiary: #87756E;
+    --divider: #3B2F2B;
+    --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--brand-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+header { text-align: center; padding: 24px 0 28px; }
+.logo {
+  width: 72px; height: 72px; margin: 0 auto 16px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  border-radius: 22px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 8px 24px #E85D2A4D;
+}
+h1 { font-size: 30px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.4px; }
+.tagline { color: var(--text-secondary); font-size: 16px; margin: 0; }
+.breadcrumb { font-size: 13px; color: var(--text-tertiary); margin-bottom: 8px; }
+.breadcrumb a { color: var(--text-secondary); }
+.last-updated { color: var(--text-tertiary); font-size: 13px; margin: 0 0 24px; }
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+}
+.card h2 { font-size: 19px; font-weight: 600; margin: 0 0 14px; letter-spacing: -0.2px; }
+.card p { color: var(--text-secondary); font-size: 15px; margin: 0 0 12px; }
+.card p:last-child { margin-bottom: 0; }
+.contact-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--brand); color: white;
+  padding: 12px 20px; border-radius: 999px;
+  font-weight: 600; font-size: 15px;
+  transition: background 0.2s;
+}
+.contact-cta:hover { background: var(--brand-dark); text-decoration: none; color: white; }
+.response-time { display: block; color: var(--text-tertiary); font-size: 13px; margin-top: 12px; }
+.faq-item { padding: 14px 0; border-top: 1px solid var(--divider); }
+.faq-item:first-of-type { border-top: none; padding-top: 0; }
+.faq-item:last-of-type { padding-bottom: 0; }
+.faq-item h3 { font-size: 15px; font-weight: 600; margin: 0 0 6px; color: var(--text); }
+.faq-item p { font-size: 14.5px; color: var(--text-secondary); margin: 0; }
+.legal-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.legal-links a {
+  flex: 1; min-width: 200px;
+  background: var(--bg);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  color: var(--text); font-weight: 500; font-size: 15px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: border-color 0.2s, background 0.2s;
+}
+.legal-links a:hover { border-color: var(--brand); background: var(--surface); text-decoration: none; }
+.legal-links a::after { content: "→"; color: var(--text-tertiary); font-size: 18px; }
+
+/* Legal doc content styles */
+.legal-content h1 { font-size: 30px; margin: 0 0 6px; letter-spacing: -0.4px; }
+.legal-content h2 { font-size: 20px; margin: 28px 0 10px; font-weight: 600; letter-spacing: -0.2px; }
+.legal-content h3 { font-size: 16px; margin: 18px 0 8px; font-weight: 600; }
+.legal-content p, .legal-content ul { color: var(--text-secondary); font-size: 15px; margin: 0 0 10px; }
+.legal-content ul { padding-left: 22px; }
+.legal-content ul li { margin-bottom: 4px; }
+.legal-content strong { color: var(--text); font-weight: 600; }
+.legal-content code {
+  background: var(--surface); padding: 1px 6px; border-radius: 4px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13.5px;
+}
+.legal-content hr { border: none; border-top: 1px solid var(--divider); margin: 32px 0; }
+.legal-content blockquote {
+  border-left: 3px solid var(--brand);
+  background: #E9D4CC33;
+  padding: 12px 16px; margin: 16px 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.legal-content blockquote p { margin: 0; color: var(--text); }
+.table-wrap { overflow-x: auto; margin: 14px 0; border-radius: var(--radius-sm); }
+.legal-content table {
+  width: 100%; border-collapse: collapse;
+  background: var(--surface);
+  font-size: 14px;
+}
+.legal-content th, .legal-content td {
+  padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--divider);
+}
+.legal-content th {
+  background: var(--bg); color: var(--text);
+  font-weight: 600; font-size: 13px;
+  letter-spacing: 0.2px; text-transform: uppercase;
+}
+.legal-content td { color: var(--text-secondary); }
+footer {
+  margin-top: 56px; padding-top: 24px;
+  border-top: 1px solid var(--divider);
+  text-align: center; color: var(--text-tertiary); font-size: 13px;
+}
+footer .links { margin-bottom: 12px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+footer .links a { color: var(--text-secondary); }
+@media (max-width: 480px) {
+  .container { padding: 20px 16px 60px; }
+  h1, .legal-content h1 { font-size: 24px; }
+  .card { padding: 22px; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" aria-hidden="true">💳</div>
+      <h1>Renlio</h1>
+      <p class="tagline">Aboneliklerini yönet, kontrolünü ele al</p>
+    </header>
+
+    <section class="card">
+      <h2>İletişim</h2>
+      <a class="contact-cta" href="mailto:omerbas283@gmail.com?subject=Renlio%20Destek">
+        ✉️ Bize E-posta Gönderin
+      </a>
+      <span class="response-time">Yanıt süresi: hafta içi 1–2 iş günü.</span>
+    </section>
+
+    <section class="card">
+      <h2>Bilmek İstedikleriniz</h2>
+      
+      <div class="faq-item">
+        <h3>Verilerim nerede saklanıyor?</h3>
+        <p>Verileriniz öncelikle cihazınızda saklanır. iCloud senkron isteğe bağlıdır ve yalnızca kendi Apple Kimliğiniz altında çalışır.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Hesabımı ve verilerimi nasıl silerim?</h3>
+        <p>Uygulama içinden <strong>Ayarlar → Hesabı Sil</strong> menüsünden tek tıkla silebilirsiniz. Silme işlemi 30 gün içinde tamamlanır.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Aboneliğimi nasıl iptal ederim?</h3>
+        <p>Abonelik Apple ID üzerinden yönetilir. <em>Ayarlar → [adınız] → Abonelikler</em> yolundan dilediğiniz an iptal edebilirsiniz. Mevcut dönem sonuna kadar premium aktif kalır.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Satın aldığım abonelik geri yüklenmiyor</h3>
+        <p>Aynı Apple Kimliği ile giriş yaptığınızdan emin olun, ardından uygulama içinde <strong>Ayarlar → Aboneliği Geri Yükle</strong> seçeneğine dokunun. Sorun devam ederse bize ulaşın.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Bir hata buldum veya özellik önerim var</h3>
+        <p>Sevinerek dinleriz. Cihaz modeli, iOS sürümü ve mümkünse ekran görüntüsüyle birlikte bize yazın.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Yasal</h2>
+      <div class="legal-links">
+        <a href="privacy.html">Gizlilik Politikası</a>
+        <a href="terms.html">Kullanım Şartları</a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year">2026</span> Renlio · <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a>
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

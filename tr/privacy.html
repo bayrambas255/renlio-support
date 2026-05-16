@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Renlio · Gizlilik Politikası" />
+  <meta name="theme-color" content="#E85D2A" />
+  <title>Renlio · Gizlilik Politikası</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💳%3C/text%3E%3C/svg%3E" />
+  <style>
+:root {
+  --brand: #E85D2A;
+  --brand-soft: #E9D4CC;
+  --brand-dark: #A8431E;
+  --bg: #F2EEEC;
+  --surface: #FDFCFC;
+  --text: #341B11;
+  --text-secondary: #674E45;
+  --text-tertiary: #93776C;
+  --divider: #DCD3CF;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px #E85D2A14;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1D1816;
+    --surface: #272220;
+    --text: #F3F2F2;
+    --text-secondary: #BAAFAB;
+    --text-tertiary: #87756E;
+    --divider: #3B2F2B;
+    --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--brand-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+header { text-align: center; padding: 24px 0 28px; }
+.logo {
+  width: 72px; height: 72px; margin: 0 auto 16px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  border-radius: 22px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 8px 24px #E85D2A4D;
+}
+h1 { font-size: 30px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.4px; }
+.tagline { color: var(--text-secondary); font-size: 16px; margin: 0; }
+.breadcrumb { font-size: 13px; color: var(--text-tertiary); margin-bottom: 8px; }
+.breadcrumb a { color: var(--text-secondary); }
+.last-updated { color: var(--text-tertiary); font-size: 13px; margin: 0 0 24px; }
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+}
+.card h2 { font-size: 19px; font-weight: 600; margin: 0 0 14px; letter-spacing: -0.2px; }
+.card p { color: var(--text-secondary); font-size: 15px; margin: 0 0 12px; }
+.card p:last-child { margin-bottom: 0; }
+.contact-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--brand); color: white;
+  padding: 12px 20px; border-radius: 999px;
+  font-weight: 600; font-size: 15px;
+  transition: background 0.2s;
+}
+.contact-cta:hover { background: var(--brand-dark); text-decoration: none; color: white; }
+.response-time { display: block; color: var(--text-tertiary); font-size: 13px; margin-top: 12px; }
+.faq-item { padding: 14px 0; border-top: 1px solid var(--divider); }
+.faq-item:first-of-type { border-top: none; padding-top: 0; }
+.faq-item:last-of-type { padding-bottom: 0; }
+.faq-item h3 { font-size: 15px; font-weight: 600; margin: 0 0 6px; color: var(--text); }
+.faq-item p { font-size: 14.5px; color: var(--text-secondary); margin: 0; }
+.legal-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.legal-links a {
+  flex: 1; min-width: 200px;
+  background: var(--bg);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  color: var(--text); font-weight: 500; font-size: 15px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: border-color 0.2s, background 0.2s;
+}
+.legal-links a:hover { border-color: var(--brand); background: var(--surface); text-decoration: none; }
+.legal-links a::after { content: "→"; color: var(--text-tertiary); font-size: 18px; }
+
+/* Legal doc content styles */
+.legal-content h1 { font-size: 30px; margin: 0 0 6px; letter-spacing: -0.4px; }
+.legal-content h2 { font-size: 20px; margin: 28px 0 10px; font-weight: 600; letter-spacing: -0.2px; }
+.legal-content h3 { font-size: 16px; margin: 18px 0 8px; font-weight: 600; }
+.legal-content p, .legal-content ul { color: var(--text-secondary); font-size: 15px; margin: 0 0 10px; }
+.legal-content ul { padding-left: 22px; }
+.legal-content ul li { margin-bottom: 4px; }
+.legal-content strong { color: var(--text); font-weight: 600; }
+.legal-content code {
+  background: var(--surface); padding: 1px 6px; border-radius: 4px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13.5px;
+}
+.legal-content hr { border: none; border-top: 1px solid var(--divider); margin: 32px 0; }
+.legal-content blockquote {
+  border-left: 3px solid var(--brand);
+  background: #E9D4CC33;
+  padding: 12px 16px; margin: 16px 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.legal-content blockquote p { margin: 0; color: var(--text); }
+.table-wrap { overflow-x: auto; margin: 14px 0; border-radius: var(--radius-sm); }
+.legal-content table {
+  width: 100%; border-collapse: collapse;
+  background: var(--surface);
+  font-size: 14px;
+}
+.legal-content th, .legal-content td {
+  padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--divider);
+}
+.legal-content th {
+  background: var(--bg); color: var(--text);
+  font-weight: 600; font-size: 13px;
+  letter-spacing: 0.2px; text-transform: uppercase;
+}
+.legal-content td { color: var(--text-secondary); }
+footer {
+  margin-top: 56px; padding-top: 24px;
+  border-top: 1px solid var(--divider);
+  text-align: center; color: var(--text-tertiary); font-size: 13px;
+}
+footer .links { margin-bottom: 12px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+footer .links a { color: var(--text-secondary); }
+@media (max-width: 480px) {
+  .container { padding: 20px 16px 60px; }
+  h1, .legal-content h1 { font-size: 24px; }
+  .card { padding: 22px; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">← Destek</a></div>
+    
+    <div class="card" style="background: #E9D4CC33; border: 1px solid #E85D2A40;">
+      <h2 style="font-size: 15px;">🔒 Kısa Özet</h2>
+      <p style="font-size: 14px; margin: 0;">Renlio verilerinizi yalnızca gereken durumda toplar; reklam veya tracking yapmaz, verileriniz öncelikle cihazınızda kalır.</p>
+    </div>
+    <article class="legal-content">
+      <h1>Renlio Gizlilik Politikası</h1>
+<p><strong>Yürürlük tarihi:</strong> 2026-05-16</p>
+<p><strong>Son güncelleme:</strong> 2026-05-16</p>
+<p><strong>Sürüm:</strong> 1.0</p>
+<p>Bu Gizlilik Politikası (&quot;<strong>Politika</strong>&quot;), Bayram Baş (&quot;<strong>biz</strong>&quot;, &quot;<strong>bize</strong>&quot;, &quot;<strong>veri sorumlusu</strong>&quot;) tarafından geliştirilen ve sunulan Renlio mobil uygulaması (&quot;<strong>Uygulama</strong>&quot; veya &quot;<strong>Hizmet</strong>&quot;) aracılığıyla kişisel verilerinizi nasıl topladığımızı, kullandığımızı, açıkladığımızı ve koruduğumuzu açıklar. Uygulamayı kullanmadan önce bu Politikayı dikkatlice okumanızı rica ederiz.</p>
+<blockquote>
+<p>⚖️ <strong>Hukuki bildirim.</strong> Bu metin hazırlanırken Türkiye&#x27;de yürürlükte olan 6698 sayılı <strong>Kişisel Verilerin Korunması Kanunu (KVKK)</strong> ile birlikte AB Genel Veri Koruma Tüzüğü (&quot;<strong>GDPR</strong>&quot;), Birleşik Krallık GDPR (&quot;<strong>UK GDPR</strong>&quot;), California Tüketici Gizliliği Yasası (&quot;<strong>CCPA/CPRA</strong>&quot;), Çocukların Çevrimiçi Gizliliğini Koruma Yasası (&quot;<strong>COPPA</strong>&quot;), Brezilya Kişisel Veri Koruma Kanunu (&quot;<strong>LGPD</strong>&quot;) ve Çin Halk Cumhuriyeti Kişisel Bilgileri Koruma Kanunu (&quot;<strong>PIPL</strong>&quot;) esas alınmıştır. Uygulamanızı hangi pazarlarda yayınladığınıza göre yetkili bir avukat tarafından gözden geçirilmesi tavsiye edilir.</p>
+</blockquote>
+<hr />
+<h2>1. Veri Sorumlusu ve İletişim</h2>
+<p><strong>Veri sorumlusunun kimliği:</strong></p>
+<ul>
+<li><strong>Ünvan:</strong> Bayram Baş</li>
+<li><strong>Adres:</strong> İstanbul, Türkiye (kayıtlı iletişim adresi için <a href="mailto:support@renlio.com">support@renlio.com</a>)</li>
+<li><strong>Vergi/Sicil No (varsa):</strong> Şahıs geliştirici — vergi kaydı uygulanabildiğinde güncellenecek</li>
+<li><strong>VERBİS kaydı (KVKK gerektiriyorsa):</strong> Muaf — KVKK Madde 16 ve VERBİS yönetmeliği uyarınca eşik altı şahıs geliştirici (yıllık 1M TL ciro / 50 çalışan / özel nitelikli veri ana faaliyet kriterlerinin hiçbirini karşılamaz)</li>
+</ul>
+<p><strong>Gizlilik talepleri için iletişim:</strong></p>
+<ul>
+<li><strong>E-posta:</strong> <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a></li>
+<li><strong>Genel destek:</strong> <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a></li>
+<li><strong>Posta adresi:</strong> İstanbul, Türkiye (kayıtlı iletişim adresi için <a href="mailto:support@renlio.com">support@renlio.com</a>)</li>
+</ul>
+<hr />
+<h2>2. Politikanın Kapsamı</h2>
+<p>Bu Politika; iOS, iPadOS ve diğer Apple platformlarında dağıtılan <strong>Renlio</strong> uygulamasını, uygulama içi tüm özellikleri, web sitelerimizi (https://renlio.com), uygulamaya bağlı API&#x27;lerimizi ve müşteri destek kanallarımızı kapsar.</p>
+<p>Bu Politika <strong>şunları kapsamaz</strong>: uygulamadan ulaşabileceğiniz üçüncü taraf sitelerin/hizmetlerin (örneğin Apple App Store, açtığınız harici bağlantılar) gizlilik uygulamaları. Üçüncü tarafların gizlilik politikalarını kendi web sitelerinden incelemeniz gerekir.</p>
+<hr />
+<h2>3. Topladığımız Kişisel Veriler</h2>
+<p>Aşağıdaki tablo, Uygulamayı kullanırken hangi veri türlerini hangi amaçla işlediğimizi gösterir. Veri kategorileri <strong>Apple App Store &quot;Veri Toplama&quot;</strong> sınıflandırması ve <strong>KVKK + GDPR</strong> veri kategorileri esas alınarak hazırlanmıştır.</p>
+<h3>3.1 Kimlik bilgileri</h3>
+<div class="table-wrap"><table><thead><tr>
+<th>Veri</th>
+<th>Kaynağı</th>
+<th>Hangi özellik</th>
+<th>Saklama</th>
+</tr></thead><tbody>
+<tr>
+<td>Ad-soyad veya kullanıcı adı</td>
+<td>Kayıt formu</td>
+<td>Hesap oluşturma</td>
+<td>Hesap aktif olduğu sürece</td>
+</tr>
+<tr>
+<td>Profil fotoğrafı (opsiyonel)</td>
+<td>Kullanıcı yüklemesi</td>
+<td>Profil görüntüleme</td>
+<td>Hesap aktif + 30 gün</td>
+</tr>
+</tbody></table></div>
+<h3>3.2 İletişim bilgileri</h3>
+<div class="table-wrap"><table><thead><tr>
+<th>Veri</th>
+<th>Kaynağı</th>
+<th>Hangi özellik</th>
+<th>Saklama</th>
+</tr></thead><tbody>
+<tr>
+<td>E-posta adresi</td>
+<td>Kayıt formu / Sign in with Apple</td>
+<td>Hesap doğrulama + iletişim</td>
+<td>Hesap aktif olduğu sürece</td>
+</tr>
+</tbody></table></div>
+<h3>3.4 Kullanım ve etkileşim verileri</h3>
+<div class="table-wrap"><table><thead><tr>
+<th>Veri</th>
+<th>Kaynağı</th>
+<th>Amaç</th>
+<th>Saklama</th>
+</tr></thead><tbody>
+<tr>
+<td>Ekran görüntülemeleri, dokunma olayları</td>
+<td>Otomatik (analitik)</td>
+<td>Ürün geliştirme</td>
+<td>24 ay</td>
+</tr>
+<tr>
+<td>Özellik kullanım sıklığı</td>
+<td>Otomatik</td>
+<td>Ürün geliştirme</td>
+<td>24 ay</td>
+</tr>
+<tr>
+<td>Oturum süreleri</td>
+<td>Otomatik</td>
+<td>Performans + UX</td>
+<td>24 ay</td>
+</tr>
+</tbody></table></div>
+<h3>3.6 Fotoğraf ve medya</h3>
+<p>Uygulama yalnızca aşağıdaki özellikler için fotoğraf kütüphanesine veya kameraya erişir; tüm erişim <strong>iOS sistem izniyle</strong> ve <strong>kullanıcı eylemiyle</strong> tetiklenir:</p>
+<ul>
+<li>Profil fotoğrafı yükleme</li>
+<li>Uygulamada içerik oluşturma (varsa)</li>
+</ul>
+<p>Erişilen fotoğraflar yalnızca aşağıdaki saklama kuralına tabidir:</p>
+<ul>
+<li><strong>Yerel:</strong> Cihazınızda saklanır; siz silinceye dek tutulur.</li>
+<li><strong>Sunucu yüklemesi:</strong> Yalnızca açık eyleminizle (Yükle butonu) sunucuya gönderilir; aksi halde cihazda kalır.</li>
+</ul>
+<h3>3.8 Ödeme ve finans verileri</h3>
+<p>Uygulama içi satın almalar <strong>Apple App Store / StoreKit</strong> üzerinden işlenir. Kart numaranıza, banka detaylarınıza veya CVV&#x27;nize <strong>erişmeyiz</strong> ve bunları <strong>saklamayız</strong>. Apple bize yalnızca işlemin başarılı olduğunu, abonelik durumunu, transaction ID&#x27;sini ve fiyat seviyesini bildirir.</p>
+<h3>3.11 Kullanıcı içerikleri</h3>
+<p>Uygulamada oluşturduğunuz içerikler (örneğin: kayıtlarınız, listeleriniz, notlarınız, oluşturduğunuz içerikler) <strong>size aittir</strong>. Biz yalnızca size hizmet sunmak için işleriz; üçüncü taraflara satmayız.</p>
+<h3>3.12 Bildirim tokenı</h3>
+<p>iOS Push Notification servisi (APNs) için cihaz tokenınızı işleriz. Token kişisel kimliğinizi içermez; yalnızca bildirim göndermek için kullanılır. Bildirimleri iOS Ayarlar → Bildirimler → Renlio yolundan kapatabilirsiniz.</p>
+<h3>3.13 Çocuklardan veri toplama</h3>
+<p>Uygulama <strong>13 yaş altındaki kişiler için tasarlanmamıştır</strong>. Bilerek 13 yaş altı çocuklardan kişisel veri toplamayız. Çocuğunuzun bize veri sağladığını düşünüyorsanız <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a> adresinden bize ulaşın; hesabı ve verileri 30 gün içinde sileriz.</p>
+<hr />
+<h2>4. Veri Toplama Yöntemleri</h2>
+<p>Kişisel verileri üç ana yöntemle toplarız:</p>
+<p>1. <strong>Doğrudan sizden:</strong> Kayıt formu, ayarlar, destek mesajları, anketler.</p>
+<p>2. <strong>Otomatik olarak:</strong> Uygulama açıldığında / kullanıldığında oluşan cihaz, ağ ve etkileşim verileri.</p>
+<p>3. <strong>Üçüncü taraflardan:</strong> Apple App Store ödeme/iadeler için, kimlik doğrulama sağlayıcıları (Apple Sign-In, Google Sign-In) için kimliğinizi onaylayan minimal veri.</p>
+<hr />
+<h2>5. İşleme Amaçları ve Hukuki Sebepler</h2>
+<p>KVKK Madde 5–6 ve GDPR Madde 6 kapsamında veriyi yalnızca aşağıdaki <strong>meşru hukuki sebeplerden en az birine</strong> dayanarak işleriz.</p>
+<div class="table-wrap"><table><thead><tr>
+<th>Amaç</th>
+<th>Hangi veri</th>
+<th>KVKK hukuki sebep</th>
+<th>GDPR hukuki sebep</th>
+</tr></thead><tbody>
+<tr>
+<td>Hesap oluşturma + giriş</td>
+<td>Kimlik, iletişim</td>
+<td>Sözleşme</td>
+<td>Madde 6(1)(b) Sözleşme</td>
+</tr>
+<tr>
+<td>Hizmeti sunma (özellikler)</td>
+<td>Kullanım, içerik</td>
+<td>Sözleşme</td>
+<td>Madde 6(1)(b) Sözleşme</td>
+</tr>
+<tr>
+<td>Ödeme + faturalandırma</td>
+<td>Apple transaction ID, abonelik durumu</td>
+<td>Sözleşme + yasal yükümlülük</td>
+<td>6(1)(b), 6(1)(c)</td>
+</tr>
+<tr>
+<td>Kararlılık + hata giderme</td>
+<td>Crash, log, cihaz</td>
+<td>Meşru menfaat (ürün kalitesi)</td>
+<td>6(1)(f) Meşru menfaat</td>
+</tr>
+<tr>
+<td>Anonim analitik</td>
+<td>Etkileşim, ekran</td>
+<td>Açık rıza VEYA meşru menfaat (anonim ise)</td>
+<td>6(1)(a) veya (f)</td>
+</tr>
+<tr>
+<td>Pazarlama iletişimi</td>
+<td>E-posta, push token</td>
+<td>Açık rıza</td>
+<td>6(1)(a) Açık rıza</td>
+</tr>
+<tr>
+<td>Yasal yükümlülükler</td>
+<td>İlgili tüm veri</td>
+<td>Yasal yükümlülük</td>
+<td>6(1)(c)</td>
+</tr>
+<tr>
+<td>Hak savunması</td>
+<td>Loglar, hesap geçmişi</td>
+<td>Meşru menfaat</td>
+<td>6(1)(f)</td>
+</tr>
+</tbody></table></div>
+<p><strong>Açık rıza:</strong> Pazarlama iletişimi, davranışsal analitik (anonim olmayan), tracking SDK&#x27;lar için <strong>açık ve önceden</strong> rıza alınır; ATT prompt&#x27;u ve in-app opt-in ile gösterilir. Rıza geri çekildiğinde ilgili işleme <strong>derhal durdurulur</strong>.</p>
+<hr />
+<h2>6. Üçüncü Taraflara Veri Aktarımı</h2>
+<p>Aşağıdaki üçüncü taraf hizmet sağlayıcılarına (veri işleyenlere) hizmetlerimizi sunmak için zorunlu minimum veri aktarımı yaparız:</p>
+<div class="table-wrap"><table><thead><tr>
+<th>Hizmet sağlayıcı</th>
+<th>Amaç</th>
+<th>Aktarılan veri</th>
+<th>Konum / Yargı</th>
+<th>Yasal koruma</th>
+</tr></thead><tbody>
+<tr>
+<td>FirebaseFirestore</td>
+<td>Sunucu tarafı veri saklama / Cloud database</td>
+<td>Cihaz teknik veri + kullanım</td>
+<td>AB / ABD</td>
+<td>DPA + SCC</td>
+</tr>
+<tr>
+<td>FirebaseAuth</td>
+<td>Kullanıcı kimlik doğrulama / Authentication</td>
+<td>Cihaz teknik veri + kullanım</td>
+<td>ABD</td>
+<td>DPA + SCC</td>
+</tr>
+<tr>
+<td>FirebaseRemoteConfig</td>
+<td>Uzaktan yapılandırma / Remote configuration</td>
+<td>Cihaz teknik veri + kullanım</td>
+<td>AB / ABD</td>
+<td>DPA + SCC</td>
+</tr>
+</tbody></table></div>
+<p>Tüm üçüncü taraflarla <strong>veri işleme sözleşmesi (DPA)</strong> imzalanmıştır. AB dışına aktarımlarda <strong>Standart Sözleşme Hükümleri (SCC)</strong> veya <strong>yeterlilik kararı</strong> kullanılır.</p>
+<p><strong>Veriyi kim </strong>görmez<strong>:</strong> Reklam ağları (uygulamada reklam yok), veri komisyoncuları, satış için üçüncü taraflar.</p>
+<p><strong>Yasal otoritelere aktarım:</strong> Yalnızca yasal zorunluluk halinde (mahkeme kararı, soruşturma talebi) ve KVKK/GDPR sınırları içinde paylaşılır. Mümkün olduğunda kullanıcıyı bilgilendiririz.</p>
+<p><strong>Şirket birleşmesi/satışı:</strong> Şirketimizi devralmaya yönelik bir işlem olursa, kişisel veriler aynı koruma seviyesi ile devralan tarafa aktarılabilir. Bu durumda kullanıcılar önceden bilgilendirilir.</p>
+<hr />
+<h2>7. Uluslararası Veri Aktarımı</h2>
+<p>Bazı veri işleyenler AB/AEA, BK veya Türkiye dışında konumlanmıştır (örneğin: ABD merkezli Apple, Firebase). Bu aktarımlar için:</p>
+<ul>
+<li><strong>AB → ABD:</strong> AB Komisyonu <strong>Adequacy Decision (Data Privacy Framework)</strong> kapsamındaki sertifikalı sağlayıcılar tercih edilir; aksi halde <strong>Standart Sözleşme Hükümleri (SCC) — 2021/914</strong></li>
+<li><strong>Türkiye → yurt dışı:</strong> KVKK Madde 9 uyarınca açık rıza VEYA Kurul&#x27;un onayladığı taahhütname</li>
+<li><strong>Birleşik Krallık → diğer:</strong> UK GDPR Madde 46 uyarınca UK IDTA (International Data Transfer Agreement)</li>
+</ul>
+<hr />
+<h2>8. Veri Saklama Süreleri</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>Veri kategorisi</th>
+<th>Saklama süresi</th>
+<th>Silme tetiği</th>
+</tr></thead><tbody>
+<tr>
+<td>Hesap bilgileri (aktif hesap)</td>
+<td>Hesap aktif olduğu sürece</td>
+<td>Hesap silme talebi → 30 gün</td>
+</tr>
+<tr>
+<td>Hesap bilgileri (pasif hesap)</td>
+<td>Son aktivite + 24 ay</td>
+<td>Otomatik silme</td>
+</tr>
+<tr>
+<td>Crash log + hata izleri</td>
+<td>12 ay</td>
+<td>Otomatik silme</td>
+</tr>
+<tr>
+<td>Analitik (toplu/anonim)</td>
+<td>36 ay</td>
+<td>Otomatik silme</td>
+</tr>
+<tr>
+<td>Apple satın alma kayıtları</td>
+<td>Yasal zorunluluk gereği 10 yıl (vergi mevzuatı)</td>
+<td>Yasal süre sonu</td>
+</tr>
+<tr>
+<td>Destek yazışmaları</td>
+<td>24 ay</td>
+<td>Otomatik silme</td>
+</tr>
+<tr>
+<td>Yasal savunma için tutulan loglar</td>
+<td>Zamanaşımı süresi (genelde 10 yıl)</td>
+<td>Yasal süre sonu</td>
+</tr>
+</tbody></table></div>
+<p><strong>Erken silme:</strong> Hesabınızı sildiğinizde yukarıdaki tüm kategoriler <strong>yasal zorunluluk hariç</strong> 30 gün içinde silinir. Yasal zorunluluk gereği saklananlar (Apple ödeme kayıtları, vergi belgeleri) anonimleştirilir veya yasal süre sonunda silinir.</p>
+<hr />
+<h2>9. Güvenlik Önlemleri</h2>
+<p>Kişisel verilerinizi korumak için <strong>idari, teknik ve fiziksel</strong> koruma tedbirleri uygularız:</p>
+<p><strong>Teknik:</strong></p>
+<ul>
+<li>TLS 1.2+ ile uçtan uca şifreleme (tüm ağ trafiği)</li>
+<li>AES-256 ile cihazda hassas verilerin (token, kimlik) şifrelenmesi</li>
+<li>Apple Keychain (Secure Enclave) ile kimlik bilgilerinin saklanması</li>
+<li>Sunucu tarafında veritabanı şifreleme (encryption-at-rest)</li>
+<li>Düzenli güvenlik denetimleri ve penetrasyon testleri</li>
+<li>Face ID / Touch ID ile uygulama kilidi seçeneği</li>
+</ul>
+<p><strong>İdari:</strong></p>
+<ul>
+<li>Veri işleme erişimlerinin &quot;need-to-know&quot; prensibiyle sınırlandırılması</li>
+<li>Personel için yıllık veri koruma eğitimi</li>
+<li>Tedarikçilerle imzalanan <strong>DPA</strong></li>
+<li>KVKK VERBİS kayıt ve düzenli güncelleme</li>
+</ul>
+<p><strong>İhlal bildirimi:</strong></p>
+<ul>
+<li>KVKK Madde 12: Kuruma 72 saat içinde, sizlere risk yüksekse derhal bildirilir</li>
+<li>GDPR Madde 33–34: Aynı 72 saat / yüksek risk durumunda kullanıcı bildirimi</li>
+</ul>
+<hr />
+<h2>10. Haklarınız</h2>
+<p>Veri sorumlusu olarak yaşadığınız ülkeye bağlı olarak aşağıdaki haklara sahipsiniz. Tüm taleplerinizi <strong><a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a></strong> adresine yazılı (e-posta) olarak iletebilirsiniz. Talepleriniz <strong>30 gün içinde</strong> ücretsiz olarak yanıtlanır.</p>
+<h3>10.1 KVKK Madde 11 Kapsamındaki Haklar (Türkiye&#x27;de ikamet edenler)</h3>
+<ul>
+<li>Verilerin işlenip işlenmediğini öğrenme</li>
+<li>İşlenmişse bilgi talep etme (kategori, amaç, kaynak)</li>
+<li>İşlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme</li>
+<li>Yurt içinde veya yurt dışında verilerin aktarıldığı üçüncü kişileri bilme</li>
+<li>Eksik veya yanlış işlenmesi halinde düzeltilmesini isteme</li>
+<li>Silinmesini veya yok edilmesini isteme</li>
+<li>Düzeltme/silme işlemlerinin verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme</li>
+<li>İşlenen verilerin münhasıran otomatik sistemlerle analiz edilmesi sebebiyle aleyhinize sonuç çıkmasına itiraz etme</li>
+<li>Hukuka aykırı işleme nedeniyle zarara uğrarsanız tazminat talep etme</li>
+</ul>
+<h3>10.2 GDPR / UK GDPR Hakları (AB ve BK&#x27;da ikamet edenler)</h3>
+<ul>
+<li><strong>Erişim hakkı</strong> (Madde 15): İşlenen verilerinizin kopyasını isteme</li>
+<li><strong>Düzeltme hakkı</strong> (Madde 16): Yanlış/eksik verilerin düzeltilmesi</li>
+<li><strong>Silme hakkı / Unutulma hakkı</strong> (Madde 17): Belirli koşullarda verilerin silinmesi</li>
+<li><strong>İşlemeyi kısıtlama hakkı</strong> (Madde 18): Geçici dondurma</li>
+<li><strong>Veri taşınabilirliği hakkı</strong> (Madde 20): Verilerinizi yapılandırılmış formatta alma (JSON / CSV)</li>
+<li><strong>İtiraz hakkı</strong> (Madde 21): Meşru menfaate dayalı işlemeye itiraz</li>
+<li><strong>Otomatik karar verme</strong> (Madde 22): Sizi etkileyen tamamen otomatik kararlara karşı insan müdahalesi isteme</li>
+<li><strong>Rızayı geri çekme</strong> (Madde 7): Verdiğiniz rızayı dilediğiniz an geri alma</li>
+<li><strong>Şikayet hakkı:</strong> Yerel denetim otoritesine (Kişisel Verileri Koruma Kurumu (Türkiye)) başvurma</li>
+</ul>
+<h3>10.3 CCPA / CPRA Hakları (California sakinleri)</h3>
+<ul>
+<li><strong>Right to Know:</strong> Toplanan kişisel bilgi kategorileri, kaynakları, paylaşılan kategoriler</li>
+<li><strong>Right to Delete:</strong> Topladığımız kişisel bilgilerin silinmesi</li>
+<li><strong>Right to Correct:</strong> Yanlış kişisel bilgilerin düzeltilmesi</li>
+<li><strong>Right to Opt-Out of Sale/Sharing:</strong> Kişisel bilgilerin satılmasına/paylaşılmasına itiraz (Not: <strong>biz kişisel bilgi satmıyoruz</strong>)</li>
+<li><strong>Right to Limit Use of Sensitive Personal Information</strong></li>
+<li><strong>Non-discrimination:</strong> Bu haklarınızı kullandığınız için size karşı ayrımcılık yapmayız</li>
+</ul>
+<h3>10.4 LGPD Hakları (Brezilya sakinleri)</h3>
+<p>LGPD Madde 18 kapsamında onaylama, erişim, düzeltme, anonimleştirme, taşınabilirlik, silme, paylaşım bilgisi, rıza geri çekme ve şikayet hakları sunulur.</p>
+<h3>10.5 PIPL Hakları (Çin sakinleri)</h3>
+<p>PIPL Madde 44–50 kapsamında bilgilendirilme, kopyalama, taşınabilirlik, düzeltme, silme, kısıtlama, rızayı geri çekme hakları sunulur.</p>
+<h3>10.6 Hesap silme</h3>
+<p>Uygulama içinden <strong>Ayarlar → Hesap → Hesabı Sil</strong> menüsünden hesabınızı tek tıkla silebilirsiniz. Apple App Store Review Guideline 5.1.1(v) gereği bu özellik kullanıcı arabiriminde sunulmaktadır. Silme işlemi sonrası:</p>
+<ul>
+<li>30 gün geri alma penceresi (yasal zorunluluk olmayan veriler için)</li>
+<li>Yasal kayıtlar (Apple ödeme) yasal süre boyunca anonimleştirilmiş olarak saklanır</li>
+<li>Yedeklerde 90 güne kadar artık kayıt kalabilir</li>
+</ul>
+<hr />
+<h2>11. Çerezler, SDK&#x27;lar ve İzleyiciler</h2>
+<p>Uygulama davranışsal reklam SDK&#x27;sı <strong>kullanmaz</strong>, IDFA toplamaz, cross-app tracking yapmaz. Apple ATT izni istemiyoruz çünkü tracking yapmıyoruz.</p>
+<hr />
+<h2>12. Otomatik Karar Verme ve Profilleme</h2>
+<p>Uygulama içerisinde kullanıcı deneyimini kişiselleştirmek için aşağıdaki otomatik işlemler yapılır:</p>
+<p>GDPR Madde 22 ve KVKK Madde 11 kapsamında bu kararlara itiraz etme ve insan müdahalesi isteme hakkınız vardır.</p>
+<hr />
+<h2>13. Politika Güncellemeleri</h2>
+<p>Bu Politikayı zaman zaman güncelleyebiliriz. Önemli değişiklik durumunda:</p>
+<ul>
+<li>Uygulama açıldığında <strong>in-app bildirim</strong> gösteririz</li>
+<li>Kayıtlı e-posta adresine bilgi göndeririz (varsa)</li>
+<li>Yeni Politika yürürlüğe girmeden önce <strong>en az 30 gün</strong> süre tanırız</li>
+<li>Yürürlük tarihi metnin başında her zaman görünür</li>
+</ul>
+<hr />
+<h2>14. Şikayet ve Başvuru</h2>
+<p>Bu Politika veya kişisel veri işleme uygulamalarımız hakkında şikayetiniz varsa:</p>
+<p>1. Önce bizimle iletişime geçin: <strong><a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a></strong></p>
+<p>2. Yanıt vermezsek veya yanıttan tatmin olmazsanız, ikamet ettiğiniz ülkenin denetim otoritesine başvurabilirsiniz:</p>
+<ul>
+<li><strong>Türkiye:</strong> Kişisel Verileri Koruma Kurumu (KVKK) — kvkk.gov.tr</li>
+<li><strong>AB:</strong> Ülkenizin Veri Koruma Otoritesi (Liste: edpb.europa.eu)</li>
+<li><strong>Birleşik Krallık:</strong> Information Commissioner&#x27;s Office — ico.org.uk</li>
+<li><strong>California:</strong> California Privacy Protection Agency — cppa.ca.gov</li>
+<li><strong>Brezilya:</strong> Autoridade Nacional de Proteção de Dados (ANPD) — anpd.gov.br</li>
+</ul>
+<hr />
+<h2>15. İletişim</h2>
+<p>Bu Gizlilik Politikası hakkında her türlü soru, talep ve başvuru için:</p>
+<ul>
+<li><strong>E-posta:</strong> <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a></li>
+<li><strong>Posta:</strong> Bayram Baş, İstanbul, Türkiye (kayıtlı iletişim adresi için <a href="mailto:support@renlio.com">support@renlio.com</a>)</li>
+<li><strong>Web:</strong> https://renlio.com/privacy</li>
+</ul>
+<hr />
+<p><strong>Sürüm geçmişi:</strong></p>
+<ul>
+<li>v1.0 (2026-05-16): İlk yayın</li>
+</ul>
+    </article>
+    <footer>
+      <div class="links">
+        <a href="index.html">Destek</a>
+        <a href="privacy.html">Gizlilik</a>
+        <a href="terms.html">Şartlar</a>
+      </div>
+      © <span id="year">2026</span> Renlio · <a href="mailto:omerbas283@gmail.com">omerbas283@gmail.com</a>
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
