@@ -60,7 +60,7 @@ python3 ~/.claude/skills/ios-privacy-manifest/scripts/generate_legal_html.py \
     --colors-json <brand-colors.json> \
     --app-name "Renlio" \
     --emoji "💳" \
-    --contact-email "omerbas283@gmail.com" \
+    --contact-email "bayrambas255@icloud.com" \
     \
     --locale tr \
     --out /tmp/renlio-support-rebuild/tr

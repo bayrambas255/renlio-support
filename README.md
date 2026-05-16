@@ -10,7 +10,7 @@ Public support pages for the [Renlio iOS app](https://apps.apple.com/app/renlio)
 
 ## Contact
 
-📧 [omerbas283@gmail.com](mailto:omerbas283@gmail.com)
+📧 [bayrambas255@icloud.com](mailto:bayrambas255@icloud.com)
 
 ## Tech
 
