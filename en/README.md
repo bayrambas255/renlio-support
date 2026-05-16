@@ -28,7 +28,7 @@ git push
 ```
 
 ### 2. Custom domain
-- Add a `CNAME` file with your domain (e.g. `renlio.com`)
+- Add a `CNAME` file with your domain (e.g. `your-domain.com`)
 - DNS: CNAME record pointing to `<user>.github.io`
 - HTTPS auto-enabled by GitHub after a few minutes
 
@@ -63,7 +63,7 @@ python3 ~/.claude/skills/ios-privacy-manifest/scripts/generate_legal_html.py \
     --contact-email "omerbas283@gmail.com" \
     \
     --locale en \
-    --out support/en
+    --out /tmp/renlio-support-rebuild/en
 ```
 
 ---

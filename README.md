@@ -1,6 +1,6 @@
 # Renlio Support
 
-Public support pages for the [Renlio iOS app](https://apps.apple.com/app/renlio) — subscription tracker for Apple Watch + iPhone.
+Public support pages for the [Renlio iOS app](https://apps.apple.com/app/renlio) — subscription tracker for iOS.
 
 ## What's here
 
@@ -14,4 +14,4 @@ Public support pages for the [Renlio iOS app](https://apps.apple.com/app/renlio)
 
 ## Tech
 
-Static HTML+CSS, no build step, mobile-friendly, auto dark mode. Generated from markdown by [ios-privacy-manifest](https://github.com/...) skill.
+Static HTML+CSS, no build step, mobile-friendly, auto dark mode. Generated from markdown by [ios-privacy-manifest](https://github.com/bayrambas255) skill.
