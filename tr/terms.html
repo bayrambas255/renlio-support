@@ -158,9 +158,9 @@ footer .links a { color: var(--text-secondary); }
     </div>
     <article class="legal-content">
       <h1>Renlio Kullanım Koşulları</h1>
-      <p><strong>Yürürlük tarihi:</strong> 17 Mayıs 2026
-      <strong>Son güncelleme:</strong> 17 Mayıs 2026
-      <strong>Sürüm:</strong> 1.0</p>
+      <p><strong>Yürürlük tarihi:</strong> 19 Mayıs 2026
+      <strong>Son güncelleme:</strong> 19 Mayıs 2026
+      <strong>Sürüm:</strong> 2.0</p>
       <hr>
       <h2>1. Genel</h2>
       <p>Bu Kullanım Koşulları ("<strong>Koşullar</strong>"), <strong>Bayram Baş</strong> ("<strong>biz</strong>", "<strong>Sağlayıcı</strong>") tarafından sunulan <strong>Renlio</strong> mobil uygulamasını ("<strong>Uygulama</strong>" veya "<strong>Hizmet</strong>") kullanan siz ("<strong>Kullanıcı</strong>", "<strong>siz</strong>") arasındaki yasal sözleşmedir. Uygulamayı indirip kurarak veya kullanarak bu Koşulları kabul etmiş sayılırsınız. Kabul etmiyorsanız Uygulamayı kullanmayın ve silin.</p>
@@ -179,7 +179,7 @@ footer .links a { color: var(--text-secondary); }
       <p>Apple App Store'dan indirilen uygulamalar için Apple, <strong>Apple Lisanslı Uygulama Son Kullanıcı Lisans Sözleşmesi (Schedule 1 / Licensed Application End User License Agreement)</strong> uygular. Bu Koşullar ile Apple EULA arasında çelişki varsa <strong>Apple EULA daha sınırlı olanı</strong> geçerlidir. Apple, bu Koşulların <strong>üçüncü taraf yararlanıcısı</strong>dır ve sizin bu Koşullara uymanızı talep etme hakkına sahiptir.</p>
       <p>Apple EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</p>
       <h3>4.3 Açık kaynak bileşenleri</h3>
-      <p>Renlio bazı açık kaynak yazılımları içerir (örn. Firebase iOS SDK, swift-* paketler). Bu bileşenlerin kendi lisansları geçerlidir; tam listeye Uygulama içinden veya destek sitesinden ulaşılabilir <em>(yayınlandığında)</em>.</p>
+      <p>Renlio bazı açık kaynak yazılımları içerir (örn. swift-* paketler). Bu bileşenlerin kendi lisansları geçerlidir; tam listeye Uygulama içinden veya destek sitesinden ulaşılabilir <em>(yayınlandığında)</em>.</p>
       <hr>
       <h2>5. Kullanıcı Yükümlülükleri</h2>
       <p>Uygulamayı kullanırken şunları <strong>yapmamayı</strong> kabul edersiniz:</p>
@@ -202,10 +202,9 @@ footer .links a { color: var(--text-secondary); }
       <h2>8. Üçüncü Taraf Hizmetleri</h2>
       <p>Hizmet aşağıdaki üçüncü taraf altyapıları kullanır:</p>
       <ul>
-      <li><strong>Apple Inc.</strong> — App Store dağıtımı, StoreKit ödeme, iCloud / CloudKit (kullanıcı verisi saklama, geliştiriciye görünmez), Push servisi, Face ID/Touch ID</li>
-      <li><strong>Google LLC / Firebase</strong> — Firestore (public katalog hosting), Firebase Analytics (anonim toplu metrik)</li>
+      <li><strong>Apple Inc.</strong> — App Store dağıtımı, StoreKit ödeme, iCloud / CloudKit (kullanıcı verisi saklama, geliştiriciye görünmez), Push servisi (silent sync), Face ID/Touch ID</li>
       </ul>
-      <p>Bu sağlayıcıların kendi sözleşmeleri/politikaları geçerlidir. Veri akışları ve gizlilik detayları <strong>Gizlilik Politikası</strong>nda açıklanmıştır.</p>
+      <p>Hizmet <strong>yalnızca Apple altyapısı</strong> üzerine kurulmuştur — başka bir üçüncü taraf SDK, analitik sağlayıcı veya veri komisyoncusu yoktur. Apple'ın kendi sözleşmeleri/politikaları geçerlidir. Veri akışları ve gizlilik detayları <strong>Gizlilik Politikası</strong>nda açıklanmıştır.</p>
       <hr>
       <h2>9. Ücretler, Abonelik ve Satın Alma</h2>
       <h3>9.1 Ücretsiz ve premium katman</h3>
@@ -264,23 +263,19 @@ footer .links a { color: var(--text-secondary); }
       <p>Bu Koşulları ihlal etmeniz halinde Hizmeti askıya alabilir veya sonlandırabiliriz. Ağır ihlallerde (yasadışı kullanım, güvenlik saldırısı) bildirim olmadan derhal sonlandırma yapılabilir.</p>
       <h3>13.2 Hizmetin sonlandırılması</h3>
       <p>Renlio'nun ticari faaliyetini durdurmamız halinde:
-      - En az <strong>60 gün önceden</strong> uygulama içi bildirim yapılır
-      - Kullanıcılara verilerini uygulamadan dışa aktarma (CSV) imkânı sunulur
+      - Destek sitesinde ve mümkünse App Store ürün sayfasında en az <strong>60 gün önceden</strong> duyuru yapılır
+      - Kullanıcılara verilerini uygulamadan dışa aktarma (<strong>JSON</strong>, Profil → Verileri Dışa Aktar) imkânı sunulur
       - Apple App Store'dan kaldırılır
-      - Mevcut aktif abonelikler için Apple iade politikaları uygulanır</p>
+      - Mevcut aktif abonelikler için Apple iade politikaları uygulanır
+      - Kullanıcının CloudKit private container'ındaki verileri Apple iCloud altyapısında kalmaya devam eder; kullanıcı Apple iCloud Ayarları üzerinden istediği zaman silebilir</p>
       <h3>13.3 Kullanıcı tarafından fesih</h3>
       <p>İstediğiniz zaman Uygulamayı kaldırarak ve <strong>Profil → "Tüm verileri sıfırla"</strong> butonuna basarak kullanıma son verebilirsiniz (App Store Review Guideline 5.1.1(v)). Tüm cihaz verisi + CloudKit verisi silinir. Aktif aboneliklerinizin iptali için ayrıca Apple ID → Abonelikler menüsünden iptal etmeniz gerekir.</p>
       <hr>
       <h2>14. Hizmetin Değiştirilmesi</h2>
-      <p>Renlio'yu zaman zaman geliştirir, özellik ekler/kaldırır, tasarımı değiştirir, fiyatlandırmayı güncelleriz. Önemli değişikliklerde uygulama içi bildirim yapılır. Değişiklikleri kabul etmiyorsanız Uygulamayı kullanmayı bırakabilirsiniz.</p>
+      <p>Renlio'yu zaman zaman geliştirir, özellik ekler/kaldırır, tasarımı değiştirir, fiyatlandırmayı güncelleriz. Önemli özellik değişiklikleri uygulama sürüm notlarında (App Store "Yenilikler" bölümü) ve destek sitesinde duyurulur. Değişiklikleri kabul etmiyorsanız Uygulamayı kullanmayı bırakabilirsiniz.</p>
       <hr>
       <h2>15. Koşulların Değiştirilmesi</h2>
-      <p>Bu Koşulları zaman zaman güncelleyebiliriz. Önemli değişikliklerde:</p>
-      <ul>
-      <li>Uygulama içinde bildirim yapılır</li>
-      <li>Yeni Koşullar yürürlüğe girmeden <strong>en az 30 gün</strong> süre tanınır</li>
-      <li>Yeni Koşullara katılmıyorsanız Uygulamayı kullanmayı bırakmanız gerekir</li>
-      </ul>
+      <p>Bu Koşulları zaman zaman güncelleyebiliriz. Güncel sürüm her zaman destek sitesindeki kanonik URL'de yayınlanır; metnin başındaki <strong>yürürlük tarihi</strong> ve <strong>sürüm numarası</strong> ile takip edebilirsiniz. Önemli değişikliklerde destek sitesinde duyuru yapılır. Yeni Koşullar yürürlüğe girdikten sonra Uygulamayı kullanmaya devam etmeniz yeni Koşulları kabul ettiğiniz anlamına gelir; kabul etmiyorsanız Uygulamayı kullanmayı bırakmanız gerekir.</p>
       <hr>
       <h2>16. Geçerli Hukuk ve Yetkili Mahkeme</h2>
       <ul>
@@ -312,7 +307,9 @@ footer .links a { color: var(--text-secondary); }
       </ul>
       <hr>
       <p><strong>Sürüm geçmişi:</strong>
+      - <strong>v2.0 (19 Mayıs 2026):</strong> Firebase iOS SDK referansları + Google/Firebase üçüncü taraf sağlayıcı satırı kaldırıldı (uygulamada artık yok). Veri dışa aktarma formatı JSON olarak netleştirildi. Politika güncelleme bildirim mekanizması destek sitesi üzerinden yapılacak şekilde gerçekçi hale getirildi.
       - <strong>v1.0 (17 Mayıs 2026):</strong> İlk yayın. Yerel-öncelikli (local-first) mimari; hesap sistemi yok; tüm kullanıcı verisi Apple ID iCloud private container'da.</p>
+
     </article>
     <footer>
       <div class="links">

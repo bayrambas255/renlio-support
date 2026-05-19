@@ -158,9 +158,9 @@ footer .links a { color: var(--text-secondary); }
     </div>
     <article class="legal-content">
       <h1>Renlio Terms of Service</h1>
-      <p><strong>Effective date:</strong> 17 May 2026
-      <strong>Last updated:</strong> 17 May 2026
-      <strong>Version:</strong> 1.0</p>
+      <p><strong>Effective date:</strong> 19 May 2026
+      <strong>Last updated:</strong> 19 May 2026
+      <strong>Version:</strong> 2.0</p>
       <hr>
       <h2>1. General</h2>
       <p>These Terms of Service ("<strong>Terms</strong>") form the legal agreement between you ("<strong>User</strong>", "<strong>you</strong>") and <strong>Bayram Baş</strong> ("<strong>we</strong>", "<strong>Provider</strong>") regarding the <strong>Renlio</strong> mobile application ("<strong>App</strong>" or "<strong>Service</strong>"). By downloading, installing, or using the App, you agree to these Terms. If you do not agree, do not use the App and delete it.</p>
@@ -179,7 +179,7 @@ footer .links a { color: var(--text-secondary); }
       <p>For apps downloaded from the Apple App Store, Apple applies the <strong>Apple Licensed Application End User License Agreement (Schedule 1 / LAEULA)</strong>. If there is a conflict between these Terms and the Apple EULA, <strong>the more restrictive one applies</strong>. Apple is a <strong>third-party beneficiary</strong> of these Terms and has the right to enforce your compliance.</p>
       <p>Apple EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</p>
       <h3>4.3 Open-source components</h3>
-      <p>Renlio includes some open-source software (e.g., Firebase iOS SDK, swift-* packages). The respective licenses apply; the full list will be accessible in-app or via the support site <em>(when published)</em>.</p>
+      <p>Renlio includes some open-source software (e.g., swift-* packages). The respective licenses apply; the full list will be accessible in-app or via the support site <em>(when published)</em>.</p>
       <hr>
       <h2>5. User Obligations</h2>
       <p>You agree NOT to:</p>
@@ -202,10 +202,9 @@ footer .links a { color: var(--text-secondary); }
       <h2>8. Third-Party Services</h2>
       <p>The Service relies on the following third-party infrastructure:</p>
       <ul>
-      <li><strong>Apple Inc.</strong> — App Store distribution, StoreKit payment, iCloud / CloudKit (user data storage, invisible to developer), Push service, Face ID/Touch ID</li>
-      <li><strong>Google LLC / Firebase</strong> — Firestore (public catalog hosting), Firebase Analytics (anonymous aggregate metrics)</li>
+      <li><strong>Apple Inc.</strong> — App Store distribution, StoreKit payment, iCloud / CloudKit (user data storage, invisible to developer), Push service (silent sync), Face ID/Touch ID</li>
       </ul>
-      <p>Their own agreements/policies apply. Data flows and privacy details are described in the <strong>Privacy Policy</strong>.</p>
+      <p>The Service runs <strong>only on Apple infrastructure</strong> — no other third-party SDK, analytics provider, or data broker is integrated. Apple's own agreements/policies apply. Data flows and privacy details are described in the <strong>Privacy Policy</strong>.</p>
       <hr>
       <h2>9. Fees, Subscription, and Purchases</h2>
       <h3>9.1 Free and premium tier</h3>
@@ -264,23 +263,19 @@ footer .links a { color: var(--text-secondary); }
       <p>We may suspend or terminate the Service if you breach these Terms. For serious breaches (unlawful use, security attack), immediate termination without notice is possible.</p>
       <h3>13.2 Service discontinuation</h3>
       <p>If we discontinue Renlio's commercial operation:
-      - We will give <strong>at least 60 days' prior</strong> in-app notice
-      - Users will be offered the ability to export their data from the app (CSV)
+      - At least <strong>60 days' prior notice</strong> will be posted on the support site and, where possible, on the App Store product page
+      - Users will be offered the ability to export their data from the app (<strong>JSON</strong>, Profile → Export Data)
       - The app will be removed from the Apple App Store
-      - For active subscriptions, Apple refund policies apply</p>
+      - For active subscriptions, Apple refund policies apply
+      - User data in the CloudKit private container remains on Apple's iCloud infrastructure; the user can delete it any time via Apple iCloud Settings</p>
       <h3>13.3 Termination by User</h3>
       <p>You can stop using the Service at any time by deleting the App and tapping <strong>Profile → "Reset all data"</strong> (per App Store Review Guideline 5.1.1(v)). All device data + CloudKit data is deleted. To cancel active subscriptions, additionally cancel them from Apple ID → Subscriptions.</p>
       <hr>
       <h2>14. Modification of the Service</h2>
-      <p>We may improve, add, remove features, redesign, or update pricing from time to time. For material changes, in-app notification is provided. If you do not accept changes, you may stop using the App.</p>
+      <p>We may improve, add, remove features, redesign, or update pricing from time to time. Material feature changes are announced in the app release notes (App Store "What's New" section) and on the support site. If you do not accept changes, you may stop using the App.</p>
       <hr>
       <h2>15. Modification of Terms</h2>
-      <p>We may update these Terms from time to time. For material changes:</p>
-      <ul>
-      <li>In-app notification</li>
-      <li>We provide <strong>at least 30 days' notice</strong> before the new Terms take effect</li>
-      <li>If you do not agree to the new Terms, you must stop using the App</li>
-      </ul>
+      <p>We may update these Terms from time to time. The current version is always published at the canonical support site URL; you can track changes via the <strong>effective date</strong> and <strong>version number</strong> at the top. Material changes are announced on the support site. Continued use of the App after the new Terms take effect constitutes your acceptance; if you do not agree, you must stop using the App.</p>
       <hr>
       <h2>16. Governing Law and Jurisdiction</h2>
       <ul>
@@ -312,7 +307,9 @@ footer .links a { color: var(--text-secondary); }
       </ul>
       <hr>
       <p><strong>Version history:</strong>
+      - <strong>v2.0 (19 May 2026):</strong> Firebase iOS SDK references + Google/Firebase third-party row removed (no longer present in the app). Data export format clarified as JSON. Policy update notification mechanism reworded to reflect the actual support-site-based flow (no in-app notification infrastructure exists).
       - <strong>v1.0 (17 May 2026):</strong> Initial release. Local-first architecture; no account system; all user data resides in the Apple ID iCloud private container.</p>
+
     </article>
     <footer>
       <div class="links">

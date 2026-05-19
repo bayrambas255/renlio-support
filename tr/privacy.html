@@ -158,9 +158,9 @@ footer .links a { color: var(--text-secondary); }
     </div>
     <article class="legal-content">
       <h1>Renlio Gizlilik Politikası</h1>
-      <p><strong>Yürürlük tarihi:</strong> 17 Mayıs 2026
-      <strong>Son güncelleme:</strong> 17 Mayıs 2026
-      <strong>Sürüm:</strong> 1.0</p>
+      <p><strong>Yürürlük tarihi:</strong> 19 Mayıs 2026
+      <strong>Son güncelleme:</strong> 19 Mayıs 2026
+      <strong>Sürüm:</strong> 2.0</p>
       <p>Bu Gizlilik Politikası ("<strong>Politika</strong>"), Bayram Baş ("<strong>biz</strong>", "<strong>bize</strong>", "<strong>veri sorumlusu</strong>") tarafından geliştirilen ve sunulan <strong>Renlio</strong> mobil uygulaması ("<strong>Uygulama</strong>" veya "<strong>Hizmet</strong>") ile ilgili gizlilik uygulamalarımızı açıklar. Uygulamayı kullanmadan önce bu Politikayı okumanızı rica ederiz.</p>
       <blockquote>
       <p>⚖️ <strong>Hukuki uyumluluk.</strong> Bu metin Türkiye'de yürürlükteki 6698 sayılı <strong>Kişisel Verilerin Korunması Kanunu (KVKK)</strong>, AB <strong>Genel Veri Koruma Tüzüğü (GDPR)</strong>, Birleşik Krallık <strong>UK GDPR</strong>, California <strong>CCPA/CPRA</strong>, <strong>COPPA</strong>, Brezilya <strong>LGPD</strong> ve Çin <strong>PIPL</strong> esas alınarak hazırlanmıştır. Yayınladığınız pazarlara göre yetkili bir avukat tarafından gözden geçirilmesi tavsiye edilir.</p>
@@ -177,8 +177,8 @@ footer .links a { color: var(--text-secondary); }
       </ul>
       <hr>
       <h2>2. TL;DR — Renlio Hakkınızda Ne Toplar</h2>
-      <p><strong>Kısa cevap: çok az.</strong></p>
-      <div class="table-wrap"><table>
+      <p><strong>Kısa cevap: hiçbir şey.</strong></p>
+      <table>
       <thead>
       <tr>
       <th>Veri</th>
@@ -198,8 +198,13 @@ footer .links a { color: var(--text-secondary); }
       <td>❌ Hayır</td>
       </tr>
       <tr>
-      <td>Apple ID, isim, e-posta, telefon</td>
-      <td><strong>Hiç toplanmaz</strong> — Renlio'nun hesap sistemi yoktur</td>
+      <td>Profil için isteğe bağlı girdiğiniz isim/e-posta</td>
+      <td>Cihazınızın UserDefaults'unda (sunucuya gönderilmez)</td>
+      <td>❌ Hayır — sadece sizin cihazınızda</td>
+      </tr>
+      <tr>
+      <td>Apple ID, telefon, sistem kimlik bilgileri</td>
+      <td><strong>Hiç toplanmaz</strong> — Renlio'nun hesap sistemi yoktur, Apple Sign-In butonu yoktur</td>
       <td>—</td>
       </tr>
       <tr>
@@ -213,9 +218,9 @@ footer .links a { color: var(--text-secondary); }
       <td>—</td>
       </tr>
       <tr>
-      <td>Toplu analitik (kaç kullanıcı, hangi şablonlar popüler)</td>
-      <td>Firebase Analytics, <strong>kişisel kimlik içermez</strong></td>
-      <td>✅ Sadece toplam, kim olduğunuzu bilemeyiz</td>
+      <td>Kullanım analitiği / event log'ları</td>
+      <td><strong>Toplanmaz</strong> — analitik SDK entegre edilmemiştir</td>
+      <td>—</td>
       </tr>
       <tr>
       <td>Uygulama içi satın alma kaydı</td>
@@ -223,7 +228,8 @@ footer .links a { color: var(--text-secondary); }
       <td>Apple bize transaction ID + abonelik durumunu söyler; banka/kart bilgisine erişmeyiz</td>
       </tr>
       </tbody>
-      </table></div>
+      </table>
+      <p><strong>Renlio'nun arkasında ne sunucu, ne veri tabanı, ne analitik backend'i vardır.</strong> Uygulama Apple altyapısı (iCloud + StoreKit) üzerine kurulu, geliştirici sunucusu yoktur.</p>
       <hr>
       <h2>3. Veri İşleme — Detaylı Açıklama</h2>
       <h3>3.1 Abonelik verileriniz (kullanıcı verisi)</h3>
@@ -243,6 +249,7 @@ footer .links a { color: var(--text-secondary); }
       <li>Bildirim tercihleri (7 ayar)</li>
       <li>App Lock açık/kapalı + Face ID/Touch ID seçimi</li>
       <li>Onboarding tamamlandı durumu</li>
+      <li>Profil ekranında isteğe bağlı girdiğiniz görünür ad ve e-posta adresi (yalnızca uygulama içi görünüm için, hiçbir doğrulama/iletişim akışında kullanılmaz, sunucuya gönderilmez)</li>
       </ul>
       <h3>3.3 Uygulama içi satın alma (StoreKit)</h3>
       <p>Renlio'nun premium aboneliği <strong>Apple App Store / StoreKit2</strong> üzerinden satın alınır. Bu işlem:</p>
@@ -253,93 +260,19 @@ footer .links a { color: var(--text-secondary); }
       <li><strong>Hukuki sebep:</strong> KVKK Madde 5/2(c); GDPR Madde 6(1)(b).</li>
       <li><strong>Saklama süresi:</strong> Apple Media Services Terms uyarınca Apple tarafından belirlenir.</li>
       </ul>
-      <h3>3.4 Toplu (anonim) analitik — Firebase Analytics</h3>
-      <p>Uygulama kullanım eğilimlerini anlamak için <strong>kimliğinizi içermeyen</strong> toplu metrikler topluyoruz. Toplanan event'lerin <strong>tam listesi</strong>:</p>
-      <div class="table-wrap"><table>
-      <thead>
-      <tr>
-      <th>Event</th>
-      <th>Parametreler</th>
-      <th>Neden</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td><code>first_open</code></td>
-      <td>(otomatik)</td>
-      <td>İlk açılış sayısı</td>
-      </tr>
-      <tr>
-      <td><code>session_start</code></td>
-      <td>(otomatik)</td>
-      <td>Aktif kullanıcı sayısı</td>
-      </tr>
-      <tr>
-      <td><code>onboarding_completed</code></td>
-      <td><code>via</code> (continued/skipped)</td>
-      <td>Onboarding huni oranı</td>
-      </tr>
-      <tr>
-      <td><code>subscription_added</code></td>
-      <td><code>template_id</code>, <code>currency</code>, <code>category</code></td>
-      <td>Hangi servis şablonları popüler</td>
-      </tr>
-      <tr>
-      <td><code>subscription_edited</code></td>
-      <td><code>template_id</code>, <code>price_changed</code></td>
-      <td>Fiyat güncelleme sıklığı</td>
-      </tr>
-      <tr>
-      <td><code>subscription_archived</code></td>
-      <td><code>template_id</code></td>
-      <td>Hangi servisler iptal ediliyor</td>
-      </tr>
-      <tr>
-      <td><code>subscription_unarchived</code></td>
-      <td><code>template_id</code></td>
-      <td>—</td>
-      </tr>
-      <tr>
-      <td><code>subscription_count_milestone</code></td>
-      <td><code>count</code> (5/10/25/50)</td>
-      <td>Kullanıcı bağlılığı sinyali</td>
-      </tr>
-      <tr>
-      <td><code>notification_permission</code></td>
-      <td><code>granted</code> (0/1)</td>
-      <td>İzin oranı</td>
-      </tr>
-      <tr>
-      <td><code>paywall_viewed</code></td>
-      <td>—</td>
-      <td>Paywall görüntüleme</td>
-      </tr>
-      <tr>
-      <td><code>paywall_purchased</code></td>
-      <td><code>product_id</code></td>
-      <td>Hangi plan popüler</td>
-      </tr>
-      <tr>
-      <td><code>data_reset</code></td>
-      <td>—</td>
-      <td>Veri sıfırlama nadirliği</td>
-      </tr>
-      </tbody>
-      </table></div>
-      <p><strong>Açıkça toplanmayanlar:</strong> kullanıcı kimliği, abonelik adı, fiyat tutarı, IBAN, e-posta, telefon, konum, IP adresi. Firebase Analytics SDK cihaz bazında anonim bir instance ID üretir (kişisel kimlikle ilişkilendirilemez).</p>
+      <h3>3.4 Analitik (toplanmıyor)</h3>
+      <p>Renlio <strong>hiçbir kullanım analitiği toplamaz</strong>. Hiçbir event log'u, hiçbir cihaz tanımlayıcısı, hiçbir crash report'u dış sunucuya gönderilmez.</p>
       <ul>
-      <li><strong>IDFA (reklam tanımlayıcısı):</strong> Toplanmaz. <code>GoogleAppMeasurementIdentitySupport</code> bağımlılığı entegre edilmemiştir.</li>
-      <li><strong>Cross-app/cross-site tracking:</strong> Yapılmaz. <code>NSPrivacyTracking=false</code>.</li>
-      <li><strong>ATT izni istenmez</strong> (gerek yok).</li>
-      <li><strong>Saklama süresi:</strong> Firebase Analytics varsayılan 14 ay.</li>
-      <li><strong>Hukuki sebep:</strong> GDPR Madde 6(1)(f) meşru menfaat (ürün geliştirme); KVKK Madde 5/2(f) meşru menfaat.</li>
+      <li><strong>Üçüncü taraf analitik SDK yoktur</strong> — Firebase Analytics, Mixpanel, Amplitude, TelemetryDeck, Sentry vb. <strong>entegre edilmemiştir</strong>.</li>
+      <li><strong>App Store Connect built-in metrikleri</strong> (indirme, retention, çökme oranı) Apple tarafından otomatik üretilir; bu Renlio'nun kontrolü dışındadır ve Apple kendi gizlilik politikasında düzenler.</li>
+      <li><strong>Crash report:</strong> Yalnızca Xcode Organizer üzerinden (Apple altyapısı, Apple ile Apple ID sahibi arasındaki standart akış) görünür. Renlio kendi crash backend'i çalıştırmaz.</li>
       </ul>
-      <h3>3.5 Public katalog — Firestore (sadece okuma)</h3>
-      <p>Uygulama, desteklediğimiz abonelik servislerinin listesi ve güncel fiyatları için Firebase Firestore'daki <strong>public katalog</strong>dan veri <strong>okur</strong>. Bu kataloğa sizden veri yazılmaz, sadece sunulan içerik indirilir. Katalog <code>meta/catalog</code> doc'unun değişimini dinler; sürüm artarsa template + tier verilerini bir kez fetch eder.</p>
+      <h3>3.5 Servis katalogu (sadece uygulama içinde, sunucu yok)</h3>
+      <p>Renlio'nun bildiği abonelik şablonları (Netflix, Spotify, ChatGPT Plus vb.) ve onların <strong>varsayılan fiyat önerileri</strong> uygulama ile birlikte <strong>IPA içinde bundled JSON dosyaları</strong> olarak gelir (<code>templates-v1.json</code>, <code>prices-v1.json</code>).</p>
       <ul>
-      <li>Kataloğa hiçbir kullanıcı verisi yüklenmez.</li>
-      <li>Firestore kuralları (<code>firestore.rules</code>) public-read'dir; auth gerektirmez.</li>
-      <li>Katalog güncellemelerini yalnızca biz (admin paneli) yaparız.</li>
+      <li><strong>Hiçbir ağ isteği yapılmaz</strong> — katalog uygulama açıldığında yerel dosyadan okunur.</li>
+      <li>Katalog güncellemesi yalnızca <strong>yeni bir uygulama sürümüyle</strong> dağıtılır (App Store / TestFlight üzerinden).</li>
+      <li>Listelenen fiyatlar sadece <strong>öneri / başlangıç değeri</strong> olup, kendi aboneliğinizi düzenlerken istediğiniz tutarı girebilirsiniz.</li>
       </ul>
       <h3>3.6 Fotoğraf erişimi (opsiyonel)</h3>
       <p>Eğer abonelik faturalarınızdan ya da Apple abonelik sayfanızdan ekran görüntüsü içe aktarmayı seçerseniz iOS PHPickerViewController üzerinden <strong>yalnızca sizin seçtiğiniz</strong> fotoğraflar okunur. Renlio'nun tüm fotoğraf kütüphanenize erişim talebi yoktur. Seçtiğiniz görüntüler cihazda işlenir, sunucuya gönderilmez.</p>
@@ -352,7 +285,7 @@ footer .links a { color: var(--text-secondary); }
       <p>Renlio <strong>13 yaş altındaki kullanıcılar için tasarlanmamıştır</strong>. Bilerek 13 yaş altı çocuklardan kişisel veri toplamayız. Çocuğunuzun Renlio kullandığını düşünüyorsanız bayrambas255@icloud.com adresine yazın; gerekli adımlar atılır.</p>
       <hr>
       <h2>4. Üçüncü Taraf Hizmet Sağlayıcılar</h2>
-      <div class="table-wrap"><table>
+      <table>
       <thead>
       <tr>
       <th>Sağlayıcı</th>
@@ -365,32 +298,24 @@ footer .links a { color: var(--text-secondary); }
       <tbody>
       <tr>
       <td><strong>Apple Inc.</strong></td>
-      <td>iCloud / CloudKit (kullanıcı verisi), StoreKit (IAP), Push servisi</td>
+      <td>iCloud / CloudKit (kullanıcı verisi), StoreKit (IAP), Push servisi (silent sync)</td>
       <td>Abonelik verisi (kullanıcı iCloud'unda — biz görmüyoruz), transaction ID</td>
       <td>Apple bölge veri merkezi (bulunduğunuz bölge)</td>
       <td>Apple kullanıcı sözleşmeleri</td>
       </tr>
-      <tr>
-      <td><strong>Google LLC / Firebase</strong></td>
-      <td>Firestore (public katalog hosting), Analytics (anonim toplu)</td>
-      <td>Katalog meta'sı (kullanıcı verisi yok), anonim event'ler</td>
-      <td>Google <code>us-central</code> veya yapılandırılan bölge</td>
-      <td>DPA + SCC (Standard Contractual Clauses)</td>
-      </tr>
       </tbody>
-      </table></div>
-      <p><strong>Reklam ağı yok.</strong> <strong>Veri komisyoncusu yok.</strong> <strong>Üçüncü tarafa kullanıcı verisi satışı yok.</strong></p>
+      </table>
+      <p><strong>Üçüncü taraf SDK yoktur.</strong> <strong>Reklam ağı yok.</strong> <strong>Analitik sağlayıcı yok.</strong> <strong>Veri komisyoncusu yok.</strong> <strong>Üçüncü tarafa kullanıcı verisi satışı yok.</strong></p>
       <p>Yasal otoritelere veri aktarımı: Yalnızca mahkeme kararı / yasal zorunluluk halinde, KVKK/GDPR sınırları içinde. Pratikte ulaştıracak veri bulunmamaktadır (kullanıcı verisi sunucularımızda yoktur).</p>
       <hr>
       <h2>5. Uluslararası Veri Aktarımı</h2>
       <ul>
       <li><strong>CloudKit:</strong> Apple, verilerinizi bölgenize uygun veri merkezinde tutar. Apple'ın Avrupa, Türkiye ve diğer ülkeler için yerel uyumluluğu mevcuttur.</li>
-      <li><strong>Firebase (Google):</strong> Sunucu konumu <code>us-central</code> (varsayılan). AB → ABD aktarımı için <strong>AB-ABD Data Privacy Framework</strong> ve/veya <strong>Standart Sözleşme Hükümleri (SCC 2021/914)</strong> uygulanır.</li>
-      <li><strong>Türkiye → yurt dışı:</strong> KVKK Madde 9 uyarınca açık rıza veya yeterli koruma sağlayan ülkelere aktarım.</li>
+      <li><strong>Türkiye → yurt dışı:</strong> KVKK Madde 9 uyarınca açık rıza veya yeterli koruma sağlayan ülkelere aktarım. Renlio'nun kendisi yurt dışına veri göndermez; Apple iCloud altyapısı kendi gizlilik politikası altında işler.</li>
       </ul>
       <hr>
       <h2>6. Saklama Süreleri</h2>
-      <div class="table-wrap"><table>
+      <table>
       <thead>
       <tr>
       <th>Veri</th>
@@ -415,27 +340,22 @@ footer .links a { color: var(--text-secondary); }
       <td>Apple Media Services Terms</td>
       </tr>
       <tr>
-      <td>Firebase Analytics event'leri</td>
-      <td>Firebase</td>
-      <td>Varsayılan 14 ay, sonra otomatik anonimleştirme</td>
-      </tr>
-      <tr>
-      <td>Firestore public katalog</td>
-      <td>Firebase (kullanıcı verisi değil)</td>
-      <td>Geliştirici politikası</td>
+      <td>Servis katalogu (bundled JSON)</td>
+      <td>Cihazda IPA içinde</td>
+      <td>App silinene kadar</td>
       </tr>
       </tbody>
-      </table></div>
+      </table>
       <hr>
       <h2>7. Güvenlik Önlemleri</h2>
       <ul>
-      <li><strong>TLS 1.2+</strong> ile şifrelenmiş ağ trafiği (CloudKit, Firebase Analytics, Firestore)</li>
+      <li><strong>TLS 1.2+</strong> ile şifrelenmiş ağ trafiği (CloudKit, StoreKit — Apple altyapısı)</li>
       <li><strong>Apple iCloud private container şifreleme</strong> — Apple sektör standartlarında end-to-end ve encryption-at-rest uygular</li>
       <li><strong>Face ID / Touch ID App Lock</strong> — uygulama içeriğini cihazda gizleme (opsiyonel)</li>
       <li><strong>App Transport Security (ATS)</strong> — uygulamada güvensiz HTTP bağlantısına izin verilmez (sadece iOS built-in Apple servis exception'ları)</li>
       <li><strong>PrivacyInfo.xcprivacy manifest</strong> — Apple gerekli/tarama API'leri ve toplanan veri tipleri şeffaf şekilde beyan edilmiştir</li>
       </ul>
-      <p><strong>Veri ihlali durumunda:</strong> Pratikte sızabilecek kullanıcı verisi sunucularımızda yoktur. Firebase tarafında bir ihlal olursa, KVKK Madde 12 (72 saat içinde Kuruma bildirim) ve GDPR Madde 33-34 prosedürleri uygulanır.</p>
+      <p><strong>Veri ihlali durumunda:</strong> Pratikte sızabilecek kullanıcı verisi sunucularımızda yoktur. Apple iCloud tarafında bir ihlal olursa Apple kendi prosedürleri uyarınca bildirimde bulunur; Renlio'nun bu bildirimi tekrar duyurma yükümlülüğü doğarsa KVKK Madde 12 (72 saat içinde Kuruma bildirim) ve GDPR Madde 33-34 prosedürleri uygulanır.</p>
       <hr>
       <h2>8. Haklarınız</h2>
       <p>Yaşadığınız ülkeye bağlı olarak aşağıdaki haklara sahipsiniz. Tüm talepler için <strong>bayrambas255@icloud.com</strong> adresine yazın; <strong>30 gün içinde</strong> ücretsiz yanıt verilir.</p>
@@ -453,14 +373,14 @@ footer .links a { color: var(--text-secondary); }
       <li><strong>Erişim hakkı</strong> (Madde 15) — istenen veri sunucumuzda yok; Apple iCloud'unuza yönlendirilirsiniz</li>
       <li><strong>Düzeltme hakkı</strong> (Madde 16) — abonelik kayıtlarınızı doğrudan uygulamadan düzenleyebilirsiniz</li>
       <li><strong>Silme hakkı / Unutulma hakkı</strong> (Madde 17) — uygulama içinden "Tüm verileri sıfırla" butonu (Profil ekranı) lokal + CloudKit tüm verileri siler</li>
-      <li><strong>Veri taşınabilirliği hakkı</strong> (Madde 20) — uygulama içinden "Dışa Aktar" özelliği kullanılabilir (CSV)</li>
-      <li><strong>İşlemeye itiraz</strong> (Madde 21) — anonim analitik için Firebase Analytics opt-out: Apple → Ayarlar → Renlio → Ayarlar → "Analitik" kapatma (gelecek sürümde)</li>
+      <li><strong>Veri taşınabilirliği hakkı</strong> (Madde 20) — uygulama içinden Profil → "Verileri Dışa Aktar" özelliği ile tüm abonelik kayıtlarınızı + tercihlerinizi yapılandırılmış <strong>JSON</strong> dosyası olarak indirebilirsiniz (<code>renlio-export-&lt;tarih&gt;.json</code>)</li>
+      <li><strong>İşlemeye itiraz</strong> (Madde 21) — analitik veya pazarlama amaçlı işleme yapılmadığı için pratik karşılığı yoktur</li>
       <li><strong>Otomatik karar verme</strong> (Madde 22) — Renlio sizi etkileyen otomatik karar vermez</li>
       <li><strong>Şikayet hakkı</strong> — yerel denetim otoritesine başvuru (TR: Kişisel Verileri Koruma Kurumu / kvkk.gov.tr)</li>
       </ul>
       <h3>8.3 CCPA / CPRA Hakları (California sakinleri)</h3>
       <ul>
-      <li><strong>Right to Know</strong> — toplanan kategoriler bu Politikada listelidir</li>
+      <li><strong>Right to Know</strong> — toplanan kategoriler bu Politikada listelidir (pratik olarak hiçbir veri kategorisi geliştirici sunucusunda tutulmaz)</li>
       <li><strong>Right to Delete</strong> — uygulama içinden "Tüm verileri sıfırla"</li>
       <li><strong>Right to Correct</strong> — uygulama içinden kayıt düzenleme</li>
       <li><strong>Right to Opt-Out of Sale/Sharing</strong> — <strong>biz hiçbir kişisel bilgi satmıyoruz veya üçüncü taraflarla paylaşmıyoruz</strong></li>
@@ -480,22 +400,18 @@ footer .links a { color: var(--text-secondary); }
       <ul>
       <li><strong>Çerez kullanılmaz</strong> (mobil uygulama, browser değil)</li>
       <li><strong>Tracking SDK yoktur</strong> — <code>NSPrivacyTracking=false</code>, <code>NSPrivacyTrackingDomains</code> boştur</li>
+      <li><strong>Analitik SDK yoktur</strong> — Firebase Analytics, Mixpanel, Amplitude, TelemetryDeck vb. entegre edilmemiştir</li>
       <li><strong>IDFA toplanmaz</strong></li>
       <li><strong>Reklam ağı yoktur</strong></li>
       <li><strong>Davranışsal hedefleme yapılmaz</strong></li>
       </ul>
-      <p>Sadece Firebase Analytics SDK kendi anonim instance ID'sini cihaz bazında üretir (kişisel kimlikle ilişkilendirilemez).</p>
       <hr>
       <h2>10. Otomatik Karar Verme ve Profilleme</h2>
       <p>Uygulama <strong>sizi etkileyen tamamen otomatik kararlar vermez</strong>, profil çıkarmaz, kredi/işe alım/sağlık etkili değerlendirme yapmaz. "Smart Suggestions" özelliği yalnızca <strong>cihazınızda</strong> hesaplanır; sunucu tarafında profil işlemi yoktur.</p>
       <hr>
       <h2>11. Politika Güncellemeleri</h2>
-      <p>Bu Politikayı zaman zaman güncelleyebiliriz. Önemli değişiklik durumunda:</p>
-      <ul>
-      <li>Uygulama açıldığında bildirim gösteririz</li>
-      <li>Yeni Politika yürürlüğe girmeden önce <strong>en az 30 gün</strong> süre tanırız</li>
-      <li>Yürürlük tarihi metnin başında her zaman görünür</li>
-      </ul>
+      <p>Bu Politikayı zaman zaman güncelleyebiliriz. Güncel sürüm her zaman destek sitesindeki kanonik URL'de yayınlanır ve metnin başındaki <strong>yürürlük tarihi</strong> + <strong>sürüm numarası</strong> ile takip edilebilir. Politikayı uygulamayı kullanmadan önce ve önemli güncellemeler sonrası gözden geçirmeniz önerilir.</p>
+      <p>Önemli değişikliklerde — özellikle veri işleme kategorisini genişleten veya yeni üçüncü taraf entegrasyonu ekleyen değişikliklerde — destek sitesinde duyuru yapılır. Uygulamayı yeni Politika yürürlükten sonra kullanmaya devam etmeniz, yeni Politikayı kabul ettiğiniz anlamına gelir.</p>
       <hr>
       <h2>12. Şikayet ve Başvuru</h2>
       <ol>
@@ -516,7 +432,9 @@ footer .links a { color: var(--text-secondary); }
       </ul>
       <hr>
       <p><strong>Sürüm geçmişi:</strong>
-      - <strong>v1.0 (17 Mayıs 2026):</strong> İlk yayın. Yerel-öncelikli (local-first) mimari: kullanıcı abonelik verisi CloudKit private container'da; geliştirici sunucularında kullanıcı verisi yok; sadece Firestore'da public katalog ve Firebase Analytics aggregate event'ler.</p>
+      - <strong>v2.0 (19 Mayıs 2026):</strong> Firebase + analitik tamamen kaldırıldı. Sıfır üçüncü taraf SDK. Sadece Apple stack (iCloud/CloudKit + StoreKit). Servis katalogu artık uygulamayla bundled JSON olarak gelir, Firestore'dan canlı okuma yok.
+      - <strong>v1.0 (17 Mayıs 2026):</strong> İlk yayın. Yerel-öncelikli (local-first) mimari: kullanıcı abonelik verisi CloudKit private container'da; geliştirici sunucularında kullanıcı verisi yok; Firestore'da public katalog ve Firebase Analytics aggregate event'ler.</p>
+
     </article>
     <footer>
       <div class="links">

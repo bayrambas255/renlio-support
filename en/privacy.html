@@ -158,9 +158,9 @@ footer .links a { color: var(--text-secondary); }
     </div>
     <article class="legal-content">
       <h1>Renlio Privacy Policy</h1>
-      <p><strong>Effective date:</strong> 17 May 2026
-      <strong>Last updated:</strong> 17 May 2026
-      <strong>Version:</strong> 1.0</p>
+      <p><strong>Effective date:</strong> 19 May 2026
+      <strong>Last updated:</strong> 19 May 2026
+      <strong>Version:</strong> 2.0</p>
       <p>This Privacy Policy ("<strong>Policy</strong>") describes the privacy practices of <strong>Renlio</strong> ("<strong>App</strong>" or "<strong>Service</strong>"), a mobile application developed and operated by Bayram Baş ("<strong>we</strong>", "<strong>us</strong>", "<strong>data controller</strong>"). Please read this Policy before using the App.</p>
       <blockquote>
       <p>⚖️ <strong>Compliance.</strong> This Policy is drafted with reference to Turkey's <strong>Personal Data Protection Law (KVKK No. 6698)</strong>, the EU <strong>General Data Protection Regulation (GDPR)</strong>, <strong>UK GDPR</strong>, California <strong>CCPA/CPRA</strong>, <strong>COPPA</strong>, Brazil's <strong>LGPD</strong>, and China's <strong>PIPL</strong>. Depending on which markets you publish in, legal review by qualified counsel is recommended.</p>
@@ -177,8 +177,8 @@ footer .links a { color: var(--text-secondary); }
       </ul>
       <hr>
       <h2>2. TL;DR — What Renlio Collects About You</h2>
-      <p><strong>Short answer: very little.</strong></p>
-      <div class="table-wrap"><table>
+      <p><strong>Short answer: nothing.</strong></p>
+      <table>
       <thead>
       <tr>
       <th>Data</th>
@@ -198,8 +198,13 @@ footer .links a { color: var(--text-secondary); }
       <td>❌ No</td>
       </tr>
       <tr>
-      <td>Apple ID, name, email, phone</td>
-      <td><strong>Never collected</strong> — Renlio has no account system</td>
+      <td>Optional display name / email you enter in Profile</td>
+      <td>Your device's UserDefaults (never sent to a server)</td>
+      <td>❌ No — only on your device</td>
+      </tr>
+      <tr>
+      <td>Apple ID, phone, system identifiers</td>
+      <td><strong>Never collected</strong> — Renlio has no account system, no Sign in with Apple button</td>
       <td>—</td>
       </tr>
       <tr>
@@ -213,9 +218,9 @@ footer .links a { color: var(--text-secondary); }
       <td>—</td>
       </tr>
       <tr>
-      <td>Aggregate analytics (how many users, which templates popular)</td>
-      <td>Firebase Analytics, <strong>contains no personal identifier</strong></td>
-      <td>✅ Only totals, we cannot tell who you are</td>
+      <td>Usage analytics / event logs</td>
+      <td><strong>Not collected</strong> — no analytics SDK is integrated</td>
+      <td>—</td>
       </tr>
       <tr>
       <td>In-app purchase records</td>
@@ -223,7 +228,8 @@ footer .links a { color: var(--text-secondary); }
       <td>Apple sends us transaction ID + subscription status; we never access bank/card info</td>
       </tr>
       </tbody>
-      </table></div>
+      </table>
+      <p><strong>There is no Renlio server, no Renlio database, no Renlio analytics backend.</strong> The app runs on Apple infrastructure (iCloud + StoreKit) with no developer server in the loop.</p>
       <hr>
       <h2>3. Data Processing — Detailed</h2>
       <h3>3.1 Your subscription data (user data)</h3>
@@ -243,6 +249,7 @@ footer .links a { color: var(--text-secondary); }
       <li>Notification preferences (7 toggles)</li>
       <li>App Lock on/off + Face ID/Touch ID selection</li>
       <li>Onboarding completion flag</li>
+      <li>Optional display name and email address you enter on the Profile screen (used only for in-app display; never used in any verification/communication flow, never sent to a server)</li>
       </ul>
       <h3>3.3 In-app purchases (StoreKit)</h3>
       <p>Renlio's premium subscription is purchased through <strong>Apple App Store / StoreKit2</strong>. The transaction:</p>
@@ -253,93 +260,19 @@ footer .links a { color: var(--text-secondary); }
       <li><strong>Legal basis:</strong> GDPR Article 6(1)(b); KVKK Article 5/2(c).</li>
       <li><strong>Retention:</strong> Determined by Apple under Apple Media Services Terms.</li>
       </ul>
-      <h3>3.4 Aggregate (anonymous) analytics — Firebase Analytics</h3>
-      <p>To understand usage trends, we collect aggregate metrics that <strong>do not contain your identity</strong>. The <strong>complete list</strong> of events we log:</p>
-      <div class="table-wrap"><table>
-      <thead>
-      <tr>
-      <th>Event</th>
-      <th>Parameters</th>
-      <th>Why</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td><code>first_open</code></td>
-      <td>(automatic)</td>
-      <td>First-launch count</td>
-      </tr>
-      <tr>
-      <td><code>session_start</code></td>
-      <td>(automatic)</td>
-      <td>Active user count</td>
-      </tr>
-      <tr>
-      <td><code>onboarding_completed</code></td>
-      <td><code>via</code> (continued/skipped)</td>
-      <td>Onboarding funnel rate</td>
-      </tr>
-      <tr>
-      <td><code>subscription_added</code></td>
-      <td><code>template_id</code>, <code>currency</code>, <code>category</code></td>
-      <td>Which service templates are popular</td>
-      </tr>
-      <tr>
-      <td><code>subscription_edited</code></td>
-      <td><code>template_id</code>, <code>price_changed</code></td>
-      <td>Price-update frequency</td>
-      </tr>
-      <tr>
-      <td><code>subscription_archived</code></td>
-      <td><code>template_id</code></td>
-      <td>Which services get cancelled</td>
-      </tr>
-      <tr>
-      <td><code>subscription_unarchived</code></td>
-      <td><code>template_id</code></td>
-      <td>—</td>
-      </tr>
-      <tr>
-      <td><code>subscription_count_milestone</code></td>
-      <td><code>count</code> (5/10/25/50)</td>
-      <td>Engagement signal</td>
-      </tr>
-      <tr>
-      <td><code>notification_permission</code></td>
-      <td><code>granted</code> (0/1)</td>
-      <td>Permission grant rate</td>
-      </tr>
-      <tr>
-      <td><code>paywall_viewed</code></td>
-      <td>—</td>
-      <td>Paywall views</td>
-      </tr>
-      <tr>
-      <td><code>paywall_purchased</code></td>
-      <td><code>product_id</code></td>
-      <td>Which plan is popular</td>
-      </tr>
-      <tr>
-      <td><code>data_reset</code></td>
-      <td>—</td>
-      <td>Data-wipe rarity</td>
-      </tr>
-      </tbody>
-      </table></div>
-      <p><strong>Explicitly NOT collected:</strong> user identifier, subscription name, price amount, IBAN, email, phone, location, IP address. The Firebase Analytics SDK generates a per-device anonymous instance ID (not linkable to personal identity).</p>
+      <h3>3.4 Analytics (not collected)</h3>
+      <p>Renlio <strong>collects no usage analytics whatsoever</strong>. No event logs, no device identifiers, no crash reports are sent to any external server.</p>
       <ul>
-      <li><strong>IDFA (advertising identifier):</strong> Not collected. The <code>GoogleAppMeasurementIdentitySupport</code> dependency is not integrated.</li>
-      <li><strong>Cross-app/cross-site tracking:</strong> None. <code>NSPrivacyTracking=false</code>.</li>
-      <li><strong>ATT permission not requested</strong> (not needed).</li>
-      <li><strong>Retention:</strong> Firebase Analytics default 14 months.</li>
-      <li><strong>Legal basis:</strong> GDPR Article 6(1)(f) legitimate interest (product improvement); KVKK Article 5/2(f) legitimate interest.</li>
+      <li><strong>No third-party analytics SDK</strong> — Firebase Analytics, Mixpanel, Amplitude, TelemetryDeck, Sentry, etc. are <strong>not integrated</strong>.</li>
+      <li><strong>App Store Connect built-in metrics</strong> (downloads, retention, crash rate) are auto-generated by Apple; this is outside Renlio's control and Apple addresses it in its own privacy policy.</li>
+      <li><strong>Crash reports:</strong> Visible only via Xcode Organizer (Apple infrastructure, standard Apple ↔ Apple ID holder flow). Renlio does not operate any crash backend.</li>
       </ul>
-      <h3>3.5 Public catalog — Firestore (read only)</h3>
-      <p>The App <strong>reads</strong> from a public catalog in Firebase Firestore for the list of supported subscription services and their current prices. No user data is written to this catalog; only the published content is downloaded. The catalog listens to the <code>meta/catalog</code> document version pivot; when it advances, template + tier data is fetched once.</p>
+      <h3>3.5 Service catalog (in-app only, no server)</h3>
+      <p>The subscription templates Renlio knows about (Netflix, Spotify, ChatGPT Plus, etc.) and their <strong>default price suggestions</strong> ship with the app as <strong>bundled JSON files inside the IPA</strong> (<code>templates-v1.json</code>, <code>prices-v1.json</code>).</p>
       <ul>
-      <li>No user data is uploaded to the catalog.</li>
-      <li>Firestore rules (<code>firestore.rules</code>) are public-read; no authentication required.</li>
-      <li>Catalog updates are made only by us (via the admin panel).</li>
+      <li><strong>No network requests</strong> — the catalog is read from local files at launch.</li>
+      <li>Catalog updates ship only with a <strong>new app release</strong> (via App Store / TestFlight).</li>
+      <li>Listed prices are only <strong>suggestions / starting values</strong>; you can enter any amount when editing your own subscription.</li>
       </ul>
       <h3>3.6 Photo access (optional)</h3>
       <p>If you choose to import screenshots of subscription bills or Apple subscription pages, only the photos <strong>you select</strong> are read via iOS PHPickerViewController. Renlio does not request access to your entire photo library. Selected images are processed on-device and not sent to any server.</p>
@@ -352,7 +285,7 @@ footer .links a { color: var(--text-secondary); }
       <p>Renlio <strong>is not designed for users under 13</strong>. We do not knowingly collect personal data from children under 13. If you believe your child has used Renlio, write to bayrambas255@icloud.com and we will take appropriate action.</p>
       <hr>
       <h2>4. Third-Party Service Providers</h2>
-      <div class="table-wrap"><table>
+      <table>
       <thead>
       <tr>
       <th>Provider</th>
@@ -365,32 +298,24 @@ footer .links a { color: var(--text-secondary); }
       <tbody>
       <tr>
       <td><strong>Apple Inc.</strong></td>
-      <td>iCloud / CloudKit (user data), StoreKit (IAP), Push service</td>
+      <td>iCloud / CloudKit (user data), StoreKit (IAP), Push service (silent sync)</td>
       <td>Subscription data (in your iCloud — we don't see it), transaction ID</td>
       <td>Apple regional data center</td>
       <td>Apple user agreements</td>
       </tr>
-      <tr>
-      <td><strong>Google LLC / Firebase</strong></td>
-      <td>Firestore (public catalog hosting), Analytics (anonymous aggregate)</td>
-      <td>Catalog meta (no user data), anonymous events</td>
-      <td>Google <code>us-central</code> or configured region</td>
-      <td>DPA + SCC (Standard Contractual Clauses)</td>
-      </tr>
       </tbody>
-      </table></div>
-      <p><strong>No advertising network.</strong> <strong>No data broker.</strong> <strong>No sale of user data to third parties.</strong></p>
+      </table>
+      <p><strong>No third-party SDK.</strong> <strong>No advertising network.</strong> <strong>No analytics provider.</strong> <strong>No data broker.</strong> <strong>No sale of user data to third parties.</strong></p>
       <p>Transfer to legal authorities: Only with court order / legal obligation, within KVKK/GDPR limits. In practice, there is no user data on our servers to transfer.</p>
       <hr>
       <h2>5. International Data Transfer</h2>
       <ul>
       <li><strong>CloudKit:</strong> Apple stores your data in a data center appropriate to your region. Apple maintains regional compliance for Europe, Turkey, and other jurisdictions.</li>
-      <li><strong>Firebase (Google):</strong> Server location <code>us-central</code> (default). For EU → US transfers, the <strong>EU-US Data Privacy Framework</strong> and/or <strong>Standard Contractual Clauses (SCC 2021/914)</strong> apply.</li>
-      <li><strong>Turkey → abroad:</strong> Under KVKK Article 9, explicit consent or transfer to countries with adequate protection.</li>
+      <li><strong>Turkey → abroad:</strong> Under KVKK Article 9, explicit consent or transfer to countries with adequate protection. Renlio itself does not send data abroad; Apple iCloud infrastructure operates under its own privacy policy.</li>
       </ul>
       <hr>
       <h2>6. Retention Periods</h2>
-      <div class="table-wrap"><table>
+      <table>
       <thead>
       <tr>
       <th>Data</th>
@@ -415,27 +340,22 @@ footer .links a { color: var(--text-secondary); }
       <td>Apple Media Services Terms</td>
       </tr>
       <tr>
-      <td>Firebase Analytics events</td>
-      <td>Firebase</td>
-      <td>Default 14 months, then auto-anonymization</td>
-      </tr>
-      <tr>
-      <td>Firestore public catalog</td>
-      <td>Firebase (not user data)</td>
-      <td>Developer policy</td>
+      <td>Service catalog (bundled JSON)</td>
+      <td>On device inside the IPA</td>
+      <td>Until app is deleted</td>
       </tr>
       </tbody>
-      </table></div>
+      </table>
       <hr>
       <h2>7. Security Measures</h2>
       <ul>
-      <li><strong>TLS 1.2+</strong> encrypted network traffic (CloudKit, Firebase Analytics, Firestore)</li>
+      <li><strong>TLS 1.2+</strong> encrypted network traffic (CloudKit, StoreKit — Apple infrastructure)</li>
       <li><strong>Apple iCloud private container encryption</strong> — Apple applies industry-standard end-to-end and encryption-at-rest</li>
       <li><strong>Face ID / Touch ID App Lock</strong> — optional in-device content protection</li>
       <li><strong>App Transport Security (ATS)</strong> — no insecure HTTP allowed (only iOS built-in Apple service exceptions)</li>
       <li><strong>PrivacyInfo.xcprivacy manifest</strong> — Apple Required Reason APIs and collected data types are transparently declared</li>
       </ul>
-      <p><strong>In case of a breach:</strong> In practice, there is no user data on our servers that could leak. If a breach occurs on Firebase, KVKK Article 12 (72-hour notification to the Authority) and GDPR Articles 33-34 procedures apply.</p>
+      <p><strong>In case of a breach:</strong> In practice, there is no user data on our servers that could leak. If a breach occurs on the Apple iCloud side, Apple notifies under its own procedures. If Renlio incurs a re-notification duty, KVKK Article 12 (72-hour notification to the Authority) and GDPR Articles 33-34 procedures apply.</p>
       <hr>
       <h2>8. Your Rights</h2>
       <p>Depending on where you live, you have the following rights. For all requests, write to <strong>bayrambas255@icloud.com</strong>; we respond <strong>within 30 days</strong> at no cost.</p>
@@ -453,14 +373,14 @@ footer .links a { color: var(--text-secondary); }
       <li><strong>Right of access</strong> (Article 15) — requested data is not on our server; you are directed to your Apple iCloud</li>
       <li><strong>Right to rectification</strong> (Article 16) — you can edit subscription records directly in the app</li>
       <li><strong>Right to erasure / Right to be forgotten</strong> (Article 17) — the "Reset all data" button in the app (Profile screen) wipes local + CloudKit data</li>
-      <li><strong>Right to data portability</strong> (Article 20) — you can use the in-app "Export" feature (CSV)</li>
-      <li><strong>Right to object</strong> (Article 21) — for anonymous analytics, Firebase Analytics opt-out via in-app Settings → "Analytics" toggle (future release)</li>
+      <li><strong>Right to data portability</strong> (Article 20) — Profile → "Export Data" generates a structured <strong>JSON</strong> file (<code>renlio-export-&lt;date&gt;.json</code>) containing your full subscription list and preferences</li>
+      <li><strong>Right to object</strong> (Article 21) — no analytics or marketing processing happens, so this right has no practical target</li>
       <li><strong>Automated decision-making</strong> (Article 22) — Renlio makes no automated decisions affecting you</li>
       <li><strong>Right to complain</strong> — file with your local supervisory authority (TR: Personal Data Protection Authority / kvkk.gov.tr)</li>
       </ul>
       <h3>8.3 CCPA / CPRA Rights (California residents)</h3>
       <ul>
-      <li><strong>Right to Know</strong> — the categories collected are listed in this Policy</li>
+      <li><strong>Right to Know</strong> — the categories collected are listed in this Policy (in practice, no category is held on developer servers)</li>
       <li><strong>Right to Delete</strong> — the in-app "Reset all data"</li>
       <li><strong>Right to Correct</strong> — edit records in-app</li>
       <li><strong>Right to Opt-Out of Sale/Sharing</strong> — <strong>we do not sell or share any personal information</strong></li>
@@ -480,22 +400,18 @@ footer .links a { color: var(--text-secondary); }
       <ul>
       <li><strong>No cookies</strong> (mobile app, not browser)</li>
       <li><strong>No tracking SDKs</strong> — <code>NSPrivacyTracking=false</code>, <code>NSPrivacyTrackingDomains</code> is empty</li>
+      <li><strong>No analytics SDK</strong> — Firebase Analytics, Mixpanel, Amplitude, TelemetryDeck, etc. are not integrated</li>
       <li><strong>No IDFA collection</strong></li>
       <li><strong>No advertising network</strong></li>
       <li><strong>No behavioral targeting</strong></li>
       </ul>
-      <p>Only the Firebase Analytics SDK generates its own per-device anonymous instance ID (not linkable to personal identity).</p>
       <hr>
       <h2>10. Automated Decision-Making and Profiling</h2>
       <p>The App <strong>makes no fully automated decisions that affect you</strong>, builds no profiles, and performs no credit/employment/health evaluation. The "Smart Suggestions" feature is calculated only <strong>on your device</strong>; there is no server-side profiling.</p>
       <hr>
       <h2>11. Policy Updates</h2>
-      <p>We may update this Policy from time to time. For material changes:</p>
-      <ul>
-      <li>In-app notification on next launch</li>
-      <li>We provide <strong>at least 30 days' notice</strong> before the new Policy takes effect</li>
-      <li>The effective date is always visible at the top</li>
-      </ul>
+      <p>We may update this Policy from time to time. The current version is always published at the canonical support site URL and can be tracked by the <strong>effective date</strong> and <strong>version number</strong> at the top of the document. You are encouraged to review the Policy before using the App and after any material update.</p>
+      <p>For material changes — particularly those expanding data processing categories or introducing new third-party integrations — an announcement is posted on the support site. Continued use of the App after the new Policy takes effect constitutes your acceptance of it.</p>
       <hr>
       <h2>12. Complaints</h2>
       <ol>
@@ -516,7 +432,9 @@ footer .links a { color: var(--text-secondary); }
       </ul>
       <hr>
       <p><strong>Version history:</strong>
-      - <strong>v1.0 (17 May 2026):</strong> Initial release. Local-first architecture: user subscription data lives in CloudKit private container; no user data on developer servers; only Firestore public catalog and Firebase Analytics aggregate events.</p>
+      - <strong>v2.0 (19 May 2026):</strong> Firebase + analytics fully removed. Zero third-party SDKs. Apple-only stack (iCloud/CloudKit + StoreKit). Service catalog now ships bundled with the app as JSON, no live Firestore reads.
+      - <strong>v1.0 (17 May 2026):</strong> Initial release. Local-first architecture: user subscription data lives in CloudKit private container; no user data on developer servers; Firestore public catalog and Firebase Analytics aggregate events.</p>
+
     </article>
     <footer>
       <div class="links">
